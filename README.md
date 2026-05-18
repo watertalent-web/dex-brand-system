@@ -9,14 +9,27 @@ Reusable DEX design system assets distributed from a public GitHub repository as
 
 ## Install from GitHub
 
-Add the dependency pinned to a tag in the consumer app:
+Install in a consumer project with npm:
+
+```bash
+npm i github:watertalent-web/dex-brand-system#v1.0.1
+```
+
+Or add the dependency manually in `package.json`:
 
 ```json
 {
   "dependencies": {
-    "@dex/brand": "github:watertalent-web/dex-brand-system#v1.0.0"
+    "@dex/brand": "github:watertalent-web/dex-brand-system#v1.0.1"
   }
 }
+```
+
+If you use another package manager:
+
+```bash
+pnpm add github:watertalent-web/dex-brand-system#v1.0.1
+yarn add github:watertalent-web/dex-brand-system#v1.0.1
 ```
 
 ## Usage in Nuxt + Tailwind
@@ -28,6 +41,8 @@ In your global stylesheet (for example `assets/css/main.css`):
 ```css
 @import "@dex/brand/tokens.css";
 ```
+
+`tokens.css` automatically loads the required Google Fonts (`Barlow Condensed` and `Space Grotesk`), so no separate font import is required.
 
 ### 2) Use the Tailwind preset
 
