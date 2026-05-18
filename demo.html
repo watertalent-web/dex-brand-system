@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DEX Design System — Token Demo</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='5' fill='%232D1B2E'/><path d='M8 7 L14 7 C24 7 25 11 25 16 S24 25 14 25 L8 25 Z' fill='%23D4860A'/><path d='M12 11 L14 11 C20 11 21 13 21 16 S20 21 14 21 L12 21 Z' fill='%232D1B2E'/></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./dex-tokens.css" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--dex-bg);
+      color: var(--dex-text);
+      font-family: var(--dex-font-ui);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      padding: var(--dex-space-8);
+    }
+
+    .page-title {
+      font-family: var(--dex-font-display);
+      font-weight: 800;
+      font-size: var(--dex-text-6xl);
+      text-transform: uppercase;
+      letter-spacing: var(--dex-display-spacing);
+      color: var(--dex-text);
+      margin-bottom: var(--dex-space-2);
+    }
+
+    .page-subtitle {
+      font-size: var(--dex-text-lg);
+      color: var(--dex-text-muted);
+      margin-bottom: var(--dex-space-16);
+      font-style: italic;
+    }
+
+    .section {
+      margin-bottom: var(--dex-space-16);
+    }
+
+    .section-title {
+      font-family: var(--dex-font-display);
+      font-weight: 700;
+      font-size: var(--dex-text-2xl);
+      text-transform: uppercase;
+      letter-spacing: var(--dex-display-spacing);
+      color: var(--dex-text-muted);
+      border-bottom: 1px solid var(--dex-border);
+      padding-bottom: var(--dex-space-3);
+      margin-bottom: var(--dex-space-6);
+    }
+
+    /* ── Kleurenswatches ── */
+    .swatch-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: var(--dex-space-3);
+    }
+
+    .swatch {
+      border-radius: var(--dex-radius);
+      overflow: hidden;
+      border: 1px solid var(--dex-border-subtle);
+    }
+
+    .swatch-color {
+      height: 64px;
+    }
+
+    .swatch-info {
+      background-color: var(--dex-surface);
+      padding: var(--dex-space-2) var(--dex-space-3);
+    }
+
+    .swatch-name {
+      font-size: var(--dex-text-xs);
+      font-weight: 600;
+      color: var(--dex-text);
+      display: block;
+    }
+
+    .swatch-token {
+      font-size: var(--dex-text-xs);
+      color: var(--dex-text-subtle);
+      font-family: var(--dex-font-mono);
+    }
+
+    .swatch-hex {
+      font-size: var(--dex-text-xs);
+      color: var(--dex-text-muted);
+      font-family: var(--dex-font-mono);
+    }
+
+    .swatch-group-label {
+      font-size: var(--dex-text-xs);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--dex-text-subtle);
+      margin-bottom: var(--dex-space-2);
+      margin-top: var(--dex-space-4);
+    }
+
+    .swatch-group-label:first-child {
+      margin-top: 0;
+    }
+
+    /* ── Typografie ── */
+    .type-specimen {
+      display: flex;
+      flex-direction: column;
+      gap: var(--dex-space-6);
+    }
+
+    .type-row {
+      background-color: var(--dex-surface);
+      border-radius: var(--dex-radius);
+      padding: var(--dex-space-6);
+      display: flex;
+      align-items: baseline;
+      gap: var(--dex-space-6);
+      border: 1px solid var(--dex-border-subtle);
+    }
+
+    .type-meta {
+      min-width: 160px;
+      font-size: var(--dex-text-xs);
+      color: var(--dex-text-subtle);
+      font-family: var(--dex-font-mono);
+      line-height: 1.4;
+    }
+
+    .type-meta strong {
+      display: block;
+      color: var(--dex-text-muted);
+      font-size: var(--dex-text-xs);
+      margin-bottom: var(--dex-space-1);
+    }
+
+    .type-sample {
+      flex: 1;
+    }
+
+    /* ── Knoppen ── */
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--dex-space-4);
+      align-items: center;
+    }
+
+    /* ── Kaarten ── */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: var(--dex-space-4);
+    }
+
+    .card {
+      border-radius: var(--dex-radius-lg);
+      padding: var(--dex-space-6);
+    }
+
+    .card-label {
+      font-size: var(--dex-text-xs);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--dex-text-subtle);
+      margin-bottom: var(--dex-space-3);
+    }
+
+    .card-title {
+      font-family: var(--dex-font-display);
+      font-weight: 700;
+      font-size: var(--dex-text-xl);
+      text-transform: uppercase;
+      letter-spacing: var(--dex-display-spacing);
+      color: var(--dex-text);
+      margin-bottom: var(--dex-space-2);
+    }
+
+    .card-body {
+      font-size: var(--dex-text-sm);
+      color: var(--dex-text-muted);
+      margin-bottom: var(--dex-space-4);
+    }
+
+    /* ── Shadows ── */
+    .shadow-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: var(--dex-space-6);
+    }
+
+    .shadow-swatch {
+      background-color: var(--dex-surface);
+      border-radius: var(--dex-radius-lg);
+      padding: var(--dex-space-6);
+      text-align: center;
+    }
+
+    .shadow-name {
+      font-size: var(--dex-text-sm);
+      font-weight: 600;
+      color: var(--dex-text);
+      display: block;
+      margin-bottom: var(--dex-space-1);
+    }
+
+    .shadow-token {
+      font-size: var(--dex-text-xs);
+      color: var(--dex-text-subtle);
+      font-family: var(--dex-font-mono);
+    }
+
+    /* ── Badges ── */
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--dex-space-3);
+      align-items: center;
+    }
+
+    .badge-gold {
+      background-color: var(--dex-gold-muted);
+      color: var(--dex-gold-light);
+      border-color: var(--dex-gold-dark);
+    }
+
+    .badge-success {
+      background-color: var(--dex-success-muted);
+      color: var(--dex-success);
+      border: 1px solid #14532d;
+    }
+
+    .badge-error {
+      background-color: var(--dex-error-muted);
+      color: var(--dex-error);
+      border: 1px solid #7f1d1d;
+    }
+
+    .badge-warning {
+      background-color: var(--dex-warning-muted);
+      color: var(--dex-warning);
+      border: 1px solid #78350f;
+    }
+
+    /* ── Status codes ── */
+    .status-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: var(--dex-space-3);
+    }
+
+    .status-item {
+      display: flex;
+      align-items: center;
+      gap: var(--dex-space-3);
+      background-color: var(--dex-surface);
+      border-radius: var(--dex-radius);
+      padding: var(--dex-space-3) var(--dex-space-4);
+      border: 1px solid var(--dex-border-subtle);
+    }
+
+    .status-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .status-info {
+      flex: 1;
+    }
+
+    .status-label {
+      font-size: var(--dex-text-sm);
+      font-weight: 500;
+      color: var(--dex-text);
+      display: block;
+    }
+
+    .status-token {
+      font-size: var(--dex-text-xs);
+      color: var(--dex-text-subtle);
+      font-family: var(--dex-font-mono);
+    }
+
+    /* ── Productlabels ── */
+    .product-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--dex-space-4);
+    }
+
+    .product-chip {
+      background-color: var(--dex-surface);
+      border-radius: var(--dex-radius-lg);
+      padding: var(--dex-space-4) var(--dex-space-6);
+      border: 1px solid var(--dex-border);
+      display: flex;
+      align-items: center;
+      gap: var(--dex-space-3);
+    }
+
+    .product-mark {
+      font-family: var(--dex-font-display);
+      font-weight: 800;
+      font-size: var(--dex-text-2xl);
+      text-transform: uppercase;
+      letter-spacing: var(--dex-display-spacing);
+    }
+
+    .product-name {
+      font-family: var(--dex-font-display);
+      font-size: var(--dex-text-xl);
+      font-weight: 600;
+      text-transform: uppercase;
+      color: var(--dex-text-muted);
+      letter-spacing: 0.02em;
+    }
+
+    .divider {
+      color: var(--dex-border);
+      margin: 0 var(--dex-space-2);
+    }
+
+    /* ── Formulierelementen ── */
+    .form-demo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: var(--dex-space-6);
+    }
+
+    .form-demo-item {
+      display: flex;
+      flex-direction: column;
+      gap: var(--dex-space-3);
+    }
+
+    .form-demo-label {
+      font-size: var(--dex-text-xs);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--dex-text-subtle);
+    }
+
+    .form-demo-note {
+      font-size: var(--dex-text-xs);
+      color: var(--dex-text-subtle);
+      font-style: italic;
+    }
+
+    .dex-input-wrp {
+      background-color: var(--dex-bg);
+      border: 1px solid var(--dex-border);
+      border-radius: 0.375rem;
+      padding: 0.5rem 0.75rem;
+      display: flex;
+      align-items: center;
+      position: relative;
+      transition: border-color 150ms ease, box-shadow 150ms ease;
+    }
+
+    .dex-input-wrp::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 10%;
+      right: 10%;
+      height: 2px;
+      background-color: transparent;
+      border-radius: 0 0 2px 2px;
+      transition: background-color 200ms ease, left 200ms ease, right 200ms ease;
+    }
+
+    .dex-input-wrp:focus-within::after {
+      background-color: var(--dex-gold);
+      left: 0;
+      right: 0;
+    }
+
+    .dex-input-wrp:focus-within {
+      border-color: rgba(212, 134, 10, 0.4);
+      box-shadow: 0 2px 12px rgba(212, 134, 10, 0.12);
+    }
+
+    .dex-input {
+      background: transparent;
+      border: none;
+      outline: none;
+      color: var(--dex-text);
+      font-family: var(--dex-font-ui);
+      font-size: var(--dex-text-sm);
+      width: 100%;
+    }
+
+    .dex-input::placeholder { color: var(--dex-text-subtle); }
+
+    .dex-select-wrp {
+      cursor: pointer;
+      justify-content: space-between;
+    }
+
+    .dex-input-text {
+      color: var(--dex-text);
+      font-family: var(--dex-font-ui);
+      font-size: var(--dex-text-sm);
+    }
+
+    .dex-select-chevron {
+      color: var(--dex-text-subtle);
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+    }
+
+    /* Dropdown demo */
+    .dex-dropdown-panel {
+      margin-top: 4px;
+      background-color: var(--dex-surface);
+      border: 1px solid var(--dex-border);
+      border-radius: 0.375rem;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+      padding: 0.25rem;
+      list-style: none;
+    }
+
+    .dex-dropdown-option {
+      padding: 0.4rem 0.75rem;
+      font-size: var(--dex-text-sm);
+      color: var(--dex-text-muted);
+      border-radius: 0.25rem;
+      cursor: pointer;
+    }
+
+    .dex-dropdown-option:hover {
+      background-color: var(--dex-teal-muted);
+      color: var(--dex-teal-light);
+    }
+
+    .dex-dropdown-option.selected {
+      background-color: var(--dex-gold-muted);
+      color: var(--dex-gold-light);
+    }
+
+    /* Radio */
+    .dex-radio-group {
+      display: flex;
+      flex-direction: column;
+      gap: var(--dex-space-2);
+    }
+
+    .dex-radio-label {
+      display: flex;
+      align-items: center;
+      gap: var(--dex-space-2);
+      cursor: pointer;
+      font-size: var(--dex-text-sm);
+      color: var(--dex-text-muted);
+    }
+
+    .dex-radio {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 1rem;
+      height: 1rem;
+      border-radius: 50%;
+      border: 2px solid rgba(212, 134, 10, 0.4);
+      background-color: var(--dex-bg);
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: background-color 150ms ease, border-color 150ms ease;
+    }
+
+    .dex-radio:checked {
+      background-color: var(--dex-gold);
+      border-color: var(--dex-gold);
+      box-shadow: inset 0 0 0 3px var(--dex-bg);
+    }
+
+    /* Toggle */
+    .dex-toggle-demo {
+      display: flex;
+      flex-direction: column;
+      gap: var(--dex-space-3);
+    }
+
+    .dex-toggle-row {
+      display: flex;
+      align-items: center;
+      gap: var(--dex-space-3);
+    }
+
+    .dex-toggle {
+      width: 40px;
+      height: 20px;
+      border-radius: 9999px;
+      position: relative;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .dex-toggle-off {
+      background-color: var(--dex-bg);
+      border: 1.5px solid var(--dex-border);
+    }
+
+    .dex-toggle-on {
+      background-color: var(--dex-gold);
+    }
+
+    .dex-toggle-thumb {
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 14px;
+      height: 14px;
+      border-radius: 9999px;
+      background-color: var(--dex-text);
+    }
+
+    .dex-toggle-thumb-on {
+      left: 23px;
+    }
+
+    .dex-toggle-caption {
+      font-size: var(--dex-text-sm);
+      color: var(--dex-text-muted);
+    }
+
+    /* Status bar (repeater header) */
+    .dex-status-bar {
+      background-color: var(--dex-teal-muted);
+      border-radius: 0.375rem 0.375rem 0 0;
+      border: 1px solid var(--dex-border);
+      border-bottom: none;
+      padding: 0 1rem;
+      min-height: 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .dex-status-bar-label {
+      font-family: var(--dex-font-ui);
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--dex-text-muted);
+    }
+
+    .dex-status-bar-actions {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .dex-status-bar-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--dex-text-subtle);
+      font-size: 0.75rem;
+      padding: 0.25rem 0.4rem;
+      transition: color 150ms ease;
+      line-height: 1;
+    }
+
+    .dex-status-bar-btn:hover { color: var(--dex-text); }
+
+    .dex-block-content {
+      background-color: var(--dex-surface);
+      border: 1px solid var(--dex-border);
+      border-top: none;
+      border-radius: 0 0 0.375rem 0.375rem;
+      padding: 1rem;
+      font-size: var(--dex-text-sm);
+      color: var(--dex-text-muted);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-title">DEX Design System</div>
+  <div class="page-subtitle">"We gooiden de rolo weg en hielden de dex." — 2008</div>
+
+  <!-- ── KLEUREN ── -->
+  <section class="section">
+    <h2 class="section-title">Kleuren</h2>
+
+    <div class="swatch-group-label">Achtergrondlagen</div>
+    <div class="swatch-grid">
+      <div class="swatch">
+        <div class="swatch-color" style="background:#2D1B2E"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">Aubergine</span>
+          <span class="swatch-token">--dex-bg</span>
+          <span class="swatch-hex">#2D1B2E</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#3D2840"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">Pruim</span>
+          <span class="swatch-token">--dex-surface</span>
+          <span class="swatch-hex">#3D2840</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#4E3352"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">Verheven</span>
+          <span class="swatch-token">--dex-surface-high</span>
+          <span class="swatch-hex">#4E3352</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#221528"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">Verzonken</span>
+          <span class="swatch-token">--dex-surface-inset</span>
+          <span class="swatch-hex">#221528</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#5C3D5E"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">Rand</span>
+          <span class="swatch-token">--dex-border</span>
+          <span class="swatch-hex">#5C3D5E</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="swatch-group-label" style="margin-top:var(--dex-space-6)">Tekst</div>
+    <div class="swatch-grid">
+      <div class="swatch">
+        <div class="swatch-color" style="background:#F5EFF3"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">Roomwit</span>
+          <span class="swatch-token">--dex-text</span>
+          <span class="swatch-hex">#F5EFF3</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#C4AEBB"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">Mauve-wit</span>
+          <span class="swatch-token">--dex-text-muted</span>
+          <span class="swatch-hex">#C4AEBB</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#8B6B7A"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">Gedimpt</span>
+          <span class="swatch-token">--dex-text-subtle</span>
+          <span class="swatch-hex">#8B6B7A</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="swatch-group-label" style="margin-top:var(--dex-space-6)">Accent — Goud (primaire actie)</div>
+    <div class="swatch-grid">
+      <div class="swatch">
+        <div class="swatch-color" style="background:#D4860A"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">Goud</span>
+          <span class="swatch-token">--dex-gold</span>
+          <span class="swatch-hex">#D4860A</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#F5A623"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">Goud Hover</span>
+          <span class="swatch-token">--dex-gold-light</span>
+          <span class="swatch-hex">#F5A623</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#A86508"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">Goud Actief</span>
+          <span class="swatch-token">--dex-gold-dark</span>
+          <span class="swatch-hex">#A86508</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#4A2E04"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">Goud Muted</span>
+          <span class="swatch-token">--dex-gold-muted</span>
+          <span class="swatch-hex">#4A2E04</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="swatch-group-label" style="margin-top:var(--dex-space-6)">Accent — Teal (links, secundair)</div>
+    <div class="swatch-grid">
+      <div class="swatch">
+        <div class="swatch-color" style="background:#00929F"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">Teal</span>
+          <span class="swatch-token">--dex-teal</span>
+          <span class="swatch-hex">#00929F</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#00B8C8"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">Teal Hover</span>
+          <span class="swatch-token">--dex-teal-light</span>
+          <span class="swatch-hex">#00B8C8</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#006E7A"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">Teal Actief</span>
+          <span class="swatch-token">--dex-teal-dark</span>
+          <span class="swatch-hex">#006E7A</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#0C3F44"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">Teal Muted</span>
+          <span class="swatch-token">--dex-teal-muted</span>
+          <span class="swatch-hex">#0C3F44</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TYPOGRAFIE ── -->
+  <section class="section">
+    <h2 class="section-title">Typografie</h2>
+    <div class="type-specimen">
+
+      <div class="type-row">
+        <div class="type-meta">
+          <strong>Display / Kop</strong>
+          Barlow Condensed 800<br/>
+          uppercase · ls 0.04em
+        </div>
+        <div class="type-sample" style="font-family:var(--dex-font-display);font-weight:800;font-size:var(--dex-text-6xl);text-transform:uppercase;letter-spacing:var(--dex-display-spacing)">
+          DEXBLOCKS
+        </div>
+      </div>
+
+      <div class="type-row">
+        <div class="type-meta">
+          <strong>H2 Sectietitel</strong>
+          Barlow Condensed 700<br/>
+          uppercase · var(--dex-text-4xl)
+        </div>
+        <div class="type-sample" style="font-family:var(--dex-font-display);font-weight:700;font-size:var(--dex-text-4xl);text-transform:uppercase;letter-spacing:var(--dex-display-spacing)">
+          Entiteiten Beheer
+        </div>
+      </div>
+
+      <div class="type-row">
+        <div class="type-meta">
+          <strong>H3 Subkop</strong>
+          Barlow Condensed 700<br/>
+          uppercase · var(--dex-text-2xl)
+        </div>
+        <div class="type-sample" style="font-family:var(--dex-font-display);font-weight:700;font-size:var(--dex-text-2xl);text-transform:uppercase;letter-spacing:var(--dex-display-spacing);color:var(--dex-text-muted)">
+          Filteropties instellen
+        </div>
+      </div>
+
+      <div class="type-row">
+        <div class="type-meta">
+          <strong>Body UI</strong>
+          Space Grotesk 400<br/>
+          var(--dex-text-base)
+        </div>
+        <div class="type-sample" style="font-family:var(--dex-font-ui);font-size:var(--dex-text-base);color:var(--dex-text-muted)">
+          Beheer al je pagina's en blokken op één plek. Het DEX-systeem geeft je volledige controle over structuur en inhoud.
+        </div>
+      </div>
+
+      <div class="type-row">
+        <div class="type-meta">
+          <strong>Label / Meta</strong>
+          Space Grotesk 600<br/>
+          var(--dex-text-xs) · uppercase
+        </div>
+        <div class="type-sample" style="font-family:var(--dex-font-ui);font-size:var(--dex-text-xs);font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--dex-text-subtle)">
+          VERSIE 4.2.0 · DEXBLOCKS
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── KNOPPEN ── -->
+  <section class="section">
+    <h2 class="section-title">Knoppen</h2>
+    <div class="btn-row">
+      <button class="dex-btn dex-btn-primary">Primaire actie</button>
+      <button class="dex-btn dex-btn-secondary">Secundaire actie</button>
+      <button class="dex-btn dex-btn-primary" style="opacity:0.4;cursor:not-allowed">Uitgeschakeld</button>
+    </div>
+    <div style="margin-top:var(--dex-space-4);font-size:var(--dex-text-xs);color:var(--dex-text-subtle);font-family:var(--dex-font-mono)">
+      .dex-btn.dex-btn-primary &nbsp;·&nbsp; .dex-btn.dex-btn-secondary
+    </div>
+  </section>
+
+  <!-- ── BADGES ── -->
+  <section class="section">
+    <h2 class="section-title">Badges</h2>
+    <div class="badge-row">
+      <span class="dex-badge">Teal badge</span>
+      <span class="dex-badge badge-gold">Goud badge</span>
+      <span class="dex-badge badge-success">Actief</span>
+      <span class="dex-badge badge-warning">Concept</span>
+      <span class="dex-badge badge-error">Fout</span>
+    </div>
+    <div style="margin-top:var(--dex-space-4);font-size:var(--dex-text-xs);color:var(--dex-text-subtle);font-family:var(--dex-font-mono)">
+      .dex-badge &nbsp;·&nbsp; modifier klassen voor kleur
+    </div>
+  </section>
+
+  <!-- ── KAARTEN ── -->
+  <section class="section">
+    <h2 class="section-title">Surfaces &amp; Kaarten</h2>
+    <div class="card-grid">
+
+      <div class="card dex-surface">
+        <div class="card-label">--dex-surface · .dex-surface</div>
+        <div class="card-title">Standaard kaart</div>
+        <div class="card-body">Achtergrondkleur voor kaarten, panels en formuliersecties.</div>
+        <span class="dex-badge">Badge</span>
+      </div>
+
+      <div class="card dex-surface-high">
+        <div class="card-label">--dex-surface-high · .dex-surface-high</div>
+        <div class="card-title">Verheven kaart</div>
+        <div class="card-body">Voor modals, dropdowns en elementen die visueel boven de pagina stijgen.</div>
+        <button class="dex-btn dex-btn-primary" style="margin-top:var(--dex-space-2)">Actie</button>
+      </div>
+
+      <div class="card" style="background:var(--dex-surface-inset);border:1px solid var(--dex-border-subtle);border-radius:var(--dex-radius-lg)">
+        <div class="card-label" style="color:var(--dex-text-subtle)">--dex-surface-inset</div>
+        <div class="card-title" style="font-size:var(--dex-text-base)">Verzonken vlak</div>
+        <div class="card-body" style="font-family:var(--dex-font-mono);font-size:var(--dex-text-xs);background:transparent">
+          config('dex-framework.version')<br/>→ '4.2.0'
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── SCHADUWEN ── -->
+  <section class="section">
+    <h2 class="section-title">Schaduwen</h2>
+    <div class="shadow-grid">
+      <div class="shadow-swatch" style="box-shadow:var(--dex-shadow-sm)">
+        <span class="shadow-name">SM</span>
+        <span class="shadow-token">--dex-shadow-sm</span>
+      </div>
+      <div class="shadow-swatch" style="box-shadow:var(--dex-shadow)">
+        <span class="shadow-name">Default</span>
+        <span class="shadow-token">--dex-shadow</span>
+      </div>
+      <div class="shadow-swatch" style="box-shadow:var(--dex-shadow-lg)">
+        <span class="shadow-name">LG</span>
+        <span class="shadow-token">--dex-shadow-lg</span>
+      </div>
+      <div class="shadow-swatch" style="box-shadow:var(--dex-shadow-glow-gold)">
+        <span class="shadow-name">Glow Goud</span>
+        <span class="shadow-token">--dex-shadow-glow-gold</span>
+      </div>
+      <div class="shadow-swatch" style="box-shadow:var(--dex-shadow-glow-teal)">
+        <span class="shadow-name">Glow Teal</span>
+        <span class="shadow-token">--dex-shadow-glow-teal</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── STATUS ── -->
+  <section class="section">
+    <h2 class="section-title">Status</h2>
+    <div class="status-grid">
+      <div class="status-item">
+        <div class="status-dot" style="background:var(--dex-success)"></div>
+        <div class="status-info">
+          <span class="status-label">Succes</span>
+          <span class="status-token">--dex-success · #22C55E</span>
+        </div>
+      </div>
+      <div class="status-item">
+        <div class="status-dot" style="background:var(--dex-warning)"></div>
+        <div class="status-info">
+          <span class="status-label">Waarschuwing</span>
+          <span class="status-token">--dex-warning · #F59E0B</span>
+        </div>
+      </div>
+      <div class="status-item">
+        <div class="status-dot" style="background:var(--dex-error)"></div>
+        <div class="status-info">
+          <span class="status-label">Fout</span>
+          <span class="status-token">--dex-error · #EF4444</span>
+        </div>
+      </div>
+      <div class="status-item">
+        <div class="status-dot" style="background:var(--dex-info)"></div>
+        <div class="status-info">
+          <span class="status-label">Info</span>
+          <span class="status-token">--dex-info · #3B82F6</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FORMULIERELEMENTEN ── -->
+  <section class="section">
+    <h2 class="section-title">Formulierelementen</h2>
+
+    <div class="form-demo-grid">
+
+      <!-- Tekstinvoer -->
+      <div class="form-demo-item">
+        <div class="form-demo-label">Tekstinvoer</div>
+        <div class="dex-input-wrp">
+          <input type="text" class="dex-input" placeholder="Voer tekst in…" />
+        </div>
+        <div class="form-demo-note">focus → gouden onderlijn + glow</div>
+      </div>
+
+      <!-- Combobox gesloten -->
+      <div class="form-demo-item">
+        <div class="form-demo-label">Combobox — gesloten</div>
+        <div class="dex-input-wrp dex-select-wrp" tabindex="0">
+          <span class="dex-input-text">Actief</span>
+          <svg class="dex-select-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+        </div>
+        <div class="form-demo-note">achtergrond: --dex-bg, tekst: --dex-text</div>
+      </div>
+
+      <!-- Combobox openklap -->
+      <div class="form-demo-item">
+        <div class="form-demo-label">Combobox — openklap</div>
+        <ul class="dex-dropdown-panel">
+          <li class="dex-dropdown-option">Concept</li>
+          <li class="dex-dropdown-option selected">Actief ✓</li>
+          <li class="dex-dropdown-option">Archief</li>
+          <li class="dex-dropdown-option" style="color:var(--dex-text-subtle)">Verwijderd</li>
+        </ul>
+        <div class="form-demo-note">hover: teal muted · geselecteerd: goud muted</div>
+      </div>
+
+      <!-- Radio buttons -->
+      <div class="form-demo-item">
+        <div class="form-demo-label">Keuzerondjes</div>
+        <div class="dex-radio-group">
+          <label class="dex-radio-label">
+            <input type="radio" name="demo-radio" class="dex-radio" checked />
+            <span>Actief</span>
+          </label>
+          <label class="dex-radio-label">
+            <input type="radio" name="demo-radio" class="dex-radio" />
+            <span>Concept</span>
+          </label>
+          <label class="dex-radio-label">
+            <input type="radio" name="demo-radio" class="dex-radio" />
+            <span>Archief</span>
+          </label>
+        </div>
+        <div class="form-demo-note">uit: aubergine + goud rand · aan: goud fill</div>
+      </div>
+
+      <!-- Toggle -->
+      <div class="form-demo-item">
+        <div class="form-demo-label">Toggle</div>
+        <div class="dex-toggle-demo">
+          <div class="dex-toggle-row">
+            <div class="dex-toggle dex-toggle-off">
+              <div class="dex-toggle-thumb"></div>
+            </div>
+            <span class="dex-toggle-caption">Uitgeschakeld</span>
+          </div>
+          <div class="dex-toggle-row">
+            <div class="dex-toggle dex-toggle-on">
+              <div class="dex-toggle-thumb dex-toggle-thumb-on"></div>
+            </div>
+            <span class="dex-toggle-caption">Ingeschakeld</span>
+          </div>
+        </div>
+        <div class="form-demo-note">uit: aubergine · aan: goud · thumb: --dex-text</div>
+      </div>
+
+    </div>
+
+    <!-- Status bar -->
+    <div style="margin-top:var(--dex-space-8)">
+      <div class="form-demo-label" style="margin-bottom:var(--dex-space-3)">Statusbalk (repeater header)</div>
+      <div style="max-width:480px">
+        <div class="dex-status-bar">
+          <span class="dex-status-bar-label">Hero Blok</span>
+          <div class="dex-status-bar-actions">
+            <button class="dex-status-bar-btn" title="Inklapppen">▲</button>
+            <button class="dex-status-bar-btn" title="Verwijderen">✕</button>
+          </div>
+        </div>
+        <div class="dex-block-content">
+          Blokinhoud — zichtbaar wanneer uitgevouwen.
+        </div>
+      </div>
+      <div class="form-demo-note" style="margin-top:var(--dex-space-3)">achtergrond: --dex-teal-muted · label: Space Grotesk uppercase --dex-text-muted</div>
+    </div>
+
+  </section>
+
+  <!-- ── PRODUCTEN ── -->
+  <section class="section">
+    <h2 class="section-title">DEX Producten</h2>
+    <div class="product-grid">
+
+      <div class="product-chip">
+        <span class="product-mark" style="color:var(--dex-gold)">[D]</span>
+        <span class="divider">|</span>
+        <span class="product-name">dexblocks</span>
+        <span style="margin-left:var(--dex-space-3)">
+          <span class="dex-badge badge-gold">accent: goud</span>
+        </span>
+      </div>
+
+      <div class="product-chip">
+        <span class="product-mark" style="color:var(--dex-teal)">[D]</span>
+        <span class="divider">|</span>
+        <span class="product-name">dextotem</span>
+        <span style="margin-left:var(--dex-space-3)">
+          <span class="dex-badge">accent: teal</span>
+        </span>
+      </div>
+
+      <div class="product-chip" style="border-style:dashed;opacity:0.5">
+        <span class="product-mark" style="color:var(--dex-text-subtle)">[D]</span>
+        <span class="divider">|</span>
+        <span class="product-name" style="color:var(--dex-text-subtle)">dex[volgend]</span>
+      </div>
+
+    </div>
+
+    <div style="margin-top:var(--dex-space-6);background:var(--dex-surface-inset);border-radius:var(--dex-radius);padding:var(--dex-space-4) var(--dex-space-5);font-size:var(--dex-text-sm);color:var(--dex-text-muted)">
+      Naamgeving: altijd lowercase, altijd aaneen: <code style="font-family:var(--dex-font-mono);color:var(--dex-gold-light)">dex[productnaam]</code>.
+      Elk product erft het aubergine fundament en kiest één primaire accentkleur.
+    </div>
+  </section>
+
+</body>
+</html>

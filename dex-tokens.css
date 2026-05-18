@@ -1,0 +1,203 @@
+/* ============================================================
+   DEX Design System — Token Library v1.0
+   "We gooiden de rolo weg en hielden de dex." (2008)
+
+   Gebruik in je project:
+   1. Kopieer dit bestand naar assets/css/dex-tokens.css
+   2. Import in main.css: @import './dex-tokens.css';
+   3. Laad de fonts (zie @import hieronder, of self-host via Fontsource)
+   ============================================================
+
+   Google Fonts — voeg toe aan je <head> of CSS entry:
+   @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Space+Grotesk:wght@400;500;600&display=swap');
+*/
+
+:root {
+
+  /* ── Achtergrondlagen ────────────────────────────────────── */
+
+  --dex-bg:             #2D1B2E;   /* Aubergine — paginaachtergrond     */
+  --dex-surface:        #3D2840;   /* Pruim — kaarten, panels           */
+  --dex-surface-high:   #4E3352;   /* Verheven — modals, hover          */
+  --dex-surface-inset:  #221528;   /* Verzonken — code, sidebars        */
+  --dex-border:         #5C3D5E;   /* Rand — lijnen, dividers           */
+  --dex-border-subtle:  #3D2840;   /* Subtiele rand — separators        */
+
+  /* ── Tekst ──────────────────────────────────────────────── */
+
+  --dex-text:           #F5EFF3;   /* Roomwit — primaire tekst          */
+  --dex-text-muted:     #C4AEBB;   /* Mauve-wit — labels, meta          */
+  --dex-text-subtle:    #8B6B7A;   /* Gedimpt — placeholders, disabled  */
+  --dex-text-inverse:   #2D1B2E;   /* Op lichte achtergrond             */
+
+  /* ── Accent: Goud (primaire actie, CTAs) ────────────────── */
+
+  --dex-gold:           #D4860A;
+  --dex-gold-light:     #F5A623;   /* Hover / focus ring                */
+  --dex-gold-dark:      #A86508;   /* Actief / pressed                  */
+  --dex-gold-muted:     #4A2E04;   /* Subtiele goud-achtergrond         */
+  --dex-gold-contrast:  #1A1000;   /* Tekst op gouden knop              */
+
+  /* ── Accent: Teal (secundaire actie, links, badges) ─────── */
+
+  --dex-teal:           #00929F;
+  --dex-teal-light:     #00B8C8;   /* Hover                             */
+  --dex-teal-dark:      #006E7A;   /* Actief                            */
+  --dex-teal-muted:     #0C3F44;   /* Subtiele teal-achtergrond         */
+  --dex-teal-contrast:  #001A1D;   /* Tekst op teal knop                */
+
+  /* ── Status ─────────────────────────────────────────────── */
+
+  --dex-success:        #22C55E;
+  --dex-success-muted:  #052E16;
+  --dex-warning:        #F59E0B;
+  --dex-warning-muted:  #3B1F04;
+  --dex-error:          #EF4444;
+  --dex-error-muted:    #3B0A0A;
+  --dex-info:           #3B82F6;
+  --dex-info-muted:     #0B1E40;
+
+  /* ── Typografie ─────────────────────────────────────────── */
+
+  --dex-font-display:   'Barlow Condensed', 'Arial Narrow', system-ui, sans-serif;
+  --dex-font-ui:        'Space Grotesk', 'Trebuchet MS', system-ui, sans-serif;
+  --dex-font-mono:      'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+
+  /* Type scale */
+  --dex-text-xs:        0.75rem;    /* 12px */
+  --dex-text-sm:        0.875rem;   /* 14px */
+  --dex-text-base:      1rem;       /* 16px */
+  --dex-text-lg:        1.125rem;   /* 18px */
+  --dex-text-xl:        1.25rem;    /* 20px */
+  --dex-text-2xl:       1.5rem;     /* 24px */
+  --dex-text-3xl:       1.875rem;   /* 30px */
+  --dex-text-4xl:       2.25rem;    /* 36px */
+  --dex-text-5xl:       3rem;       /* 48px */
+  --dex-text-6xl:       3.75rem;    /* 60px */
+
+  /* Display-koppengewicht */
+  --dex-display-weight: 700;
+  --dex-display-transform: uppercase;
+  --dex-display-spacing: 0.04em;
+
+  /* ── Afmetingen ─────────────────────────────────────────── */
+
+  /* Border radius */
+  --dex-radius-xs:      2px;
+  --dex-radius-sm:      4px;
+  --dex-radius:         8px;
+  --dex-radius-lg:      12px;
+  --dex-radius-xl:      16px;
+  --dex-radius-full:    9999px;
+
+  /* Spacing (4px grid) */
+  --dex-space-1:        0.25rem;    /* 4px  */
+  --dex-space-2:        0.5rem;     /* 8px  */
+  --dex-space-3:        0.75rem;    /* 12px */
+  --dex-space-4:        1rem;       /* 16px */
+  --dex-space-5:        1.25rem;    /* 20px */
+  --dex-space-6:        1.5rem;     /* 24px */
+  --dex-space-8:        2rem;       /* 32px */
+  --dex-space-10:       2.5rem;     /* 40px */
+  --dex-space-12:       3rem;       /* 48px */
+  --dex-space-16:       4rem;       /* 64px */
+  --dex-space-20:       5rem;       /* 80px */
+  --dex-space-24:       6rem;       /* 96px */
+
+  /* ── Schaduwen (donkere achtergrond) ─────────────────────── */
+
+  --dex-shadow-sm:      0 1px 3px rgba(0, 0, 0, 0.4);
+  --dex-shadow:         0 4px 12px rgba(0, 0, 0, 0.5);
+  --dex-shadow-lg:      0 8px 24px rgba(0, 0, 0, 0.6);
+  --dex-shadow-xl:      0 16px 40px rgba(0, 0, 0, 0.7);
+  --dex-shadow-glow-gold: 0 0 16px rgba(212, 134, 10, 0.35);
+  --dex-shadow-glow-teal: 0 0 16px rgba(0, 146, 159, 0.35);
+
+  /* ── Overgangen ─────────────────────────────────────────── */
+
+  --dex-transition-fast:   150ms ease;
+  --dex-transition:        250ms ease;
+  --dex-transition-slow:   400ms ease;
+
+  /* ── Product-specifieke overrides ───────────────────────── */
+  /* Kopieer en overschrijf in jouw product-CSS:              */
+  /*   --dex-product-accent: var(--dex-teal);                 */
+
+  --dexblocks-accent:   var(--dex-gold);
+  --dexblocks-accent-2: var(--dex-teal);
+
+  --dextotem-accent:    var(--dex-teal);
+  --dextotem-accent-2:  var(--dex-gold);
+
+}
+
+/* ── Basis component-utilities ──────────────────────────── */
+
+.dex-surface {
+  background-color: var(--dex-surface);
+  border: 1px solid var(--dex-border);
+  border-radius: var(--dex-radius);
+}
+
+.dex-surface-high {
+  background-color: var(--dex-surface-high);
+  border: 1px solid var(--dex-border);
+  border-radius: var(--dex-radius);
+}
+
+.dex-text-display {
+  font-family: var(--dex-font-display);
+  font-weight: var(--dex-display-weight);
+  text-transform: var(--dex-display-transform);
+  letter-spacing: var(--dex-display-spacing);
+}
+
+.dex-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--dex-space-2);
+  padding: var(--dex-space-3) var(--dex-space-6);
+  border-radius: var(--dex-radius);
+  font-family: var(--dex-font-ui);
+  font-size: var(--dex-text-sm);
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: background-color var(--dex-transition-fast),
+              box-shadow var(--dex-transition-fast);
+  text-decoration: none;
+}
+
+.dex-btn-primary {
+  background-color: var(--dex-gold);
+  color: var(--dex-gold-contrast);
+}
+
+.dex-btn-primary:hover {
+  background-color: var(--dex-gold-light);
+  box-shadow: var(--dex-shadow-glow-gold);
+}
+
+.dex-btn-secondary {
+  background-color: transparent;
+  color: var(--dex-teal);
+  border: 1.5px solid var(--dex-teal);
+}
+
+.dex-btn-secondary:hover {
+  background-color: var(--dex-teal-muted);
+  box-shadow: var(--dex-shadow-glow-teal);
+}
+
+.dex-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--dex-space-1) var(--dex-space-3);
+  border-radius: var(--dex-radius-full);
+  font-size: var(--dex-text-xs);
+  font-weight: 600;
+  font-family: var(--dex-font-ui);
+  background-color: var(--dex-teal-muted);
+  color: var(--dex-teal-light);
+  border: 1px solid var(--dex-teal-dark);
+}
