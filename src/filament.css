@@ -96,6 +96,49 @@ html.fi,
     font-family: var(--dex-font-mono, "JetBrains Mono"), "Fira Code", "Cascadia Code", monospace;
 }
 
+/* Filament simple auth pages (login, password reset, etc.) */
+.fi-simple-main-ctn {
+    background:
+        radial-gradient(900px 360px at 50% -10%, color-mix(in srgb, var(--dex-teal, #00929f) 24%, transparent), transparent 65%),
+        linear-gradient(
+            180deg,
+            color-mix(in srgb, var(--dex-bg, #2d1b2e) 96%, black) 0%,
+            color-mix(in srgb, var(--dex-bg, #2d1b2e) 88%, black) 100%
+        );
+}
+
+.fi-simple-main {
+    background: color-mix(in srgb, var(--dex-surface, #3d2840) 95%, black);
+    border: 1px solid color-mix(in srgb, var(--dex-border, #5c3d5e) 80%, black);
+    border-radius: var(--dex-radius-xl, 16px);
+    box-shadow: 0 18px 42px rgba(0, 0, 0, 0.42);
+    color: var(--dex-text, #f5eff3);
+}
+
+.fi-simple-main .fi-logo,
+.fi-simple-main .fi-logo * {
+    color: var(--dex-text, #f5eff3);
+}
+
+.fi-simple-header-heading {
+    color: var(--dex-text, #f5eff3);
+    font-family: var(--dex-font-display, "Barlow Condensed"), system-ui, sans-serif;
+    letter-spacing: var(--dex-display-spacing, 0.04em);
+    text-transform: uppercase;
+}
+
+.fi-simple-header-subheading {
+    color: var(--dex-text-muted, #c4aebb);
+}
+
+.fi-simple-main .fi-fo-field-wrp-label,
+.fi-simple-main .fi-fo-field-wrp-label span,
+.fi-simple-main .fi-checkbox-list-option-label,
+.fi-simple-main .fi-fo-checkbox-list-option-label,
+.fi-simple-main .fi-fo-checkbox-field-wrp-label {
+    color: color-mix(in srgb, var(--dex-text, #f5eff3) 92%, white);
+}
+
 .fi-topbar,
 .fi-sidebar {
     background: var(--dex-surface, #ffffff);

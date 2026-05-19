@@ -2,6 +2,11 @@
 
 All notable changes to this package are documented in this file.
 
+## v1.1.2 - 2026-05-19
+
+- Added dedicated styling for Filament simple auth pages (including login)
+- Improved login card, headings, labels, and overall auth page contrast
+
 ## v1.1.1 - 2026-05-19
 
 - Improved package metadata and README clarity for frontend and Filament usage

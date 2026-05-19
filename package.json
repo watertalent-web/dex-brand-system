@@ -1,6 +1,6 @@
 {
   "name": "@dex/brand",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Shared DEX tokens, Tailwind preset, and Filament theme bridge",
   "type": "module",
   "exports": {
