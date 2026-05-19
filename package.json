@@ -5,6 +5,7 @@
   "type": "module",
   "exports": {
     "./tokens.css": "./src/tokens.css",
+    "./filament.css": "./src/filament.css",
     "./tailwind": "./src/tailwind.ts"
   },
   "files": [

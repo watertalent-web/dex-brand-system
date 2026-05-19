@@ -5,6 +5,7 @@ Reusable DEX design system assets distributed from a public GitHub repository as
 ## What is included
 
 - `@dex/brand/tokens.css` -> shared CSS custom properties and utility classes
+- `@dex/brand/filament.css` -> shared Filament admin theme overrides
 - `@dex/brand/tailwind` -> shared Tailwind preset (`src/tailwind.ts`)
 
 ## Install from GitHub
@@ -79,6 +80,26 @@ Then consume variables directly:
   color: var(--dex-text);
   border: 1px solid var(--dex-border);
 }
+```
+
+## Usage in Laravel Filament
+
+In your Filament theme entry file (for example `resources/css/filament-theme.css`):
+
+```css
+@import "@dex/brand/tokens.css";
+@import "../../vendor/filament/filament/resources/css/theme.css";
+@import "@dex/brand/filament.css";
+
+@source "../../app/Filament/**/*.php";
+@source "../../resources/views/filament/**/*.blade.php";
+@source "../../vendor/filament/**/*.blade.php";
+```
+
+Then register the file in your panel provider:
+
+```php
+->viteTheme('resources/css/filament-theme.css')
 ```
 
 ## Versioning and updates

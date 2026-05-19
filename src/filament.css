@@ -1,0 +1,1020 @@
+/* Brand token bridge for Filament's expected color/font variables. */
+:root {
+    --font-family: var(--dex-font-ui, "Inter");
+    --mono-font-family: var(--dex-font-mono, "JetBrains Mono");
+    --serif-font-family: var(--dex-font-serif, "Georgia");
+
+    --primary-50: color-mix(in srgb, var(--dex-gold, #d4860a) 10%, white);
+    --primary-100: color-mix(in srgb, var(--dex-gold, #d4860a) 20%, white);
+    --primary-200: color-mix(in srgb, var(--dex-gold, #d4860a) 35%, white);
+    --primary-300: color-mix(in srgb, var(--dex-gold, #d4860a) 50%, white);
+    --primary-400: color-mix(in srgb, var(--dex-gold, #d4860a) 70%, white);
+    --primary-500: var(--dex-gold, #d4860a);
+    --primary-600: color-mix(in srgb, var(--dex-gold, #d4860a) 86%, black);
+    --primary-700: color-mix(in srgb, var(--dex-gold, #d4860a) 74%, black);
+    --primary-800: color-mix(in srgb, var(--dex-gold, #d4860a) 62%, black);
+    --primary-900: color-mix(in srgb, var(--dex-gold, #d4860a) 52%, black);
+    --primary-950: color-mix(in srgb, var(--dex-gold, #d4860a) 40%, black);
+
+    --gray-50: color-mix(in srgb, var(--dex-bg, #2d1b2e) 8%, white);
+    --gray-100: color-mix(in srgb, var(--dex-bg, #2d1b2e) 14%, white);
+    --gray-200: color-mix(in srgb, var(--dex-bg, #2d1b2e) 22%, white);
+    --gray-300: color-mix(in srgb, var(--dex-bg, #2d1b2e) 32%, white);
+    --gray-400: color-mix(in srgb, var(--dex-bg, #2d1b2e) 45%, white);
+    --gray-500: color-mix(in srgb, var(--dex-bg, #2d1b2e) 58%, white);
+    --gray-600: color-mix(in srgb, var(--dex-bg, #2d1b2e) 68%, white);
+    --gray-700: color-mix(in srgb, var(--dex-bg, #2d1b2e) 78%, white);
+    --gray-800: color-mix(in srgb, var(--dex-bg, #2d1b2e) 86%, white);
+    --gray-900: color-mix(in srgb, var(--dex-bg, #2d1b2e) 92%, white);
+    --gray-950: color-mix(in srgb, var(--dex-bg, #2d1b2e) 96%, white);
+
+    --success-50: color-mix(in srgb, var(--dex-success, #10b981) 10%, white);
+    --success-100: color-mix(in srgb, var(--dex-success, #10b981) 20%, white);
+    --success-200: color-mix(in srgb, var(--dex-success, #10b981) 35%, white);
+    --success-300: color-mix(in srgb, var(--dex-success, #10b981) 50%, white);
+    --success-400: color-mix(in srgb, var(--dex-success, #10b981) 70%, white);
+    --success-500: var(--dex-success, #10b981);
+    --success-600: color-mix(in srgb, var(--dex-success, #10b981) 84%, black);
+    --success-700: color-mix(in srgb, var(--dex-success, #10b981) 72%, black);
+    --success-800: color-mix(in srgb, var(--dex-success, #10b981) 60%, black);
+    --success-900: color-mix(in srgb, var(--dex-success, #10b981) 50%, black);
+    --success-950: color-mix(in srgb, var(--dex-success, #10b981) 38%, black);
+
+    --danger-50: color-mix(in srgb, var(--dex-error, #ef4444) 10%, white);
+    --danger-100: color-mix(in srgb, var(--dex-error, #ef4444) 20%, white);
+    --danger-200: color-mix(in srgb, var(--dex-error, #ef4444) 35%, white);
+    --danger-300: color-mix(in srgb, var(--dex-error, #ef4444) 50%, white);
+    --danger-400: color-mix(in srgb, var(--dex-error, #ef4444) 70%, white);
+    --danger-500: var(--dex-error, #ef4444);
+    --danger-600: color-mix(in srgb, var(--dex-error, #ef4444) 84%, black);
+    --danger-700: color-mix(in srgb, var(--dex-error, #ef4444) 72%, black);
+    --danger-800: color-mix(in srgb, var(--dex-error, #ef4444) 60%, black);
+    --danger-900: color-mix(in srgb, var(--dex-error, #ef4444) 50%, black);
+    --danger-950: color-mix(in srgb, var(--dex-error, #ef4444) 38%, black);
+
+    --warning-50: color-mix(in srgb, var(--dex-gold, #f59e0b) 10%, white);
+    --warning-100: color-mix(in srgb, var(--dex-gold, #f59e0b) 20%, white);
+    --warning-200: color-mix(in srgb, var(--dex-gold, #f59e0b) 35%, white);
+    --warning-300: color-mix(in srgb, var(--dex-gold, #f59e0b) 50%, white);
+    --warning-400: color-mix(in srgb, var(--dex-gold, #f59e0b) 70%, white);
+    --warning-500: var(--dex-gold, #f59e0b);
+    --warning-600: color-mix(in srgb, var(--dex-gold, #f59e0b) 84%, black);
+    --warning-700: color-mix(in srgb, var(--dex-gold, #f59e0b) 72%, black);
+    --warning-800: color-mix(in srgb, var(--dex-gold, #f59e0b) 60%, black);
+    --warning-900: color-mix(in srgb, var(--dex-gold, #f59e0b) 50%, black);
+    --warning-950: color-mix(in srgb, var(--dex-gold, #f59e0b) 38%, black);
+
+    --info-50: color-mix(in srgb, var(--dex-info, #0ea5e9) 10%, white);
+    --info-100: color-mix(in srgb, var(--dex-info, #0ea5e9) 20%, white);
+    --info-200: color-mix(in srgb, var(--dex-info, #0ea5e9) 35%, white);
+    --info-300: color-mix(in srgb, var(--dex-info, #0ea5e9) 50%, white);
+    --info-400: color-mix(in srgb, var(--dex-info, #0ea5e9) 70%, white);
+    --info-500: var(--dex-info, #0ea5e9);
+    --info-600: color-mix(in srgb, var(--dex-info, #0ea5e9) 84%, black);
+    --info-700: color-mix(in srgb, var(--dex-info, #0ea5e9) 72%, black);
+    --info-800: color-mix(in srgb, var(--dex-info, #0ea5e9) 60%, black);
+    --info-900: color-mix(in srgb, var(--dex-info, #0ea5e9) 50%, black);
+    --info-950: color-mix(in srgb, var(--dex-info, #0ea5e9) 38%, black);
+}
+
+.fi-body {
+    background: var(--dex-bg, #f8fafc);
+    color: var(--dex-text, #0f172a);
+    font-family: var(--dex-font-ui, "Inter"), system-ui, sans-serif;
+}
+
+html.fi,
+.fi-body,
+.fi-body * {
+    font-family: var(--dex-font-ui, "Space Grotesk"), "Trebuchet MS", system-ui, sans-serif;
+}
+
+.fi-body code,
+.fi-body pre,
+.fi-body kbd,
+.fi-body samp {
+    font-family: var(--dex-font-mono, "JetBrains Mono"), "Fira Code", "Cascadia Code", monospace;
+}
+
+.fi-topbar,
+.fi-sidebar {
+    background: var(--dex-surface, #ffffff);
+}
+
+.fi-topbar {
+    background: linear-gradient(
+        90deg,
+        color-mix(in srgb, var(--dex-surface-inset, #221528) 74%, black) 0%,
+        color-mix(in srgb, var(--dex-surface-high, #4e3352) 88%, black) 52%,
+        color-mix(in srgb, var(--dex-surface, #3d2840) 92%, black) 100%
+    );
+    color: var(--dex-text, #f5eff3);
+    border-bottom: 1px solid color-mix(in srgb, var(--dex-teal, #00929f) 34%, transparent);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.28);
+}
+
+.fi-topbar .fi-icon-btn,
+.fi-topbar .fi-dropdown-trigger,
+.fi-topbar .fi-user-menu-trigger,
+.fi-topbar .fi-link {
+    color: var(--dex-text, #f5eff3);
+}
+
+.fi-topbar .fi-logo,
+.fi-topbar .fi-logo * {
+    color: #ffffff;
+    opacity: 1;
+}
+
+.fi-topbar .fi-logo {
+    font-family: var(--dex-font-display, "Barlow Condensed"), system-ui, sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    text-shadow: 0 1px 10px rgba(0, 0, 0, 0.45);
+}
+
+.fi-topbar .fi-icon-btn:hover,
+.fi-topbar .fi-dropdown-trigger:hover,
+.fi-topbar .fi-user-menu-trigger:hover,
+.fi-topbar .fi-link:hover {
+    color: #ffffff;
+    background: color-mix(in srgb, var(--dex-teal, #00929f) 20%, transparent);
+    border-radius: var(--dex-radius, 8px);
+}
+
+.fi-sidebar {
+    background: var(--dex-surface-inset, #0f2b38);
+    border-right: 1px solid color-mix(in srgb, var(--dex-teal, #0ea5a6) 24%, transparent);
+}
+
+.fi-sidebar-header,
+.fi-sidebar-nav,
+.fi-sidebar-group-label,
+.fi-sidebar-item-label,
+.fi-sidebar-database-notifications-btn > .fi-sidebar-database-notifications-btn-label {
+    color: color-mix(in srgb, white 88%, var(--dex-teal, #0ea5a6));
+}
+
+.fi-sidebar .fi-logo,
+.fi-sidebar .fi-logo * {
+    color: color-mix(in srgb, white 94%, var(--dex-teal, #0ea5a6));
+}
+
+.fi-sidebar-item-btn > .fi-icon,
+.fi-sidebar-group-btn > .fi-icon,
+.fi-sidebar-group-dropdown-trigger-btn > .fi-icon,
+.fi-sidebar-database-notifications-btn > .fi-icon {
+    color: color-mix(in srgb, white 72%, var(--dex-teal, #0ea5a6));
+}
+
+.fi-sidebar-item.fi-sidebar-item-has-url > .fi-sidebar-item-btn:hover,
+.fi-sidebar-item.fi-sidebar-item-has-url > .fi-sidebar-item-btn:focus-visible,
+.fi-sidebar-group-dropdown-trigger-btn:hover,
+.fi-sidebar-group-dropdown-trigger-btn:focus-visible,
+.fi-sidebar-database-notifications-btn:hover,
+.fi-sidebar-database-notifications-btn:focus-visible {
+    background: color-mix(in srgb, var(--dex-teal, #0ea5a6) 24%, transparent);
+}
+
+.fi-sidebar-item.fi-sidebar-item-has-url > .fi-sidebar-item-btn:hover > .fi-sidebar-item-label,
+.fi-sidebar-item.fi-sidebar-item-has-url > .fi-sidebar-item-btn:focus-visible > .fi-sidebar-item-label,
+.fi-sidebar-item.fi-sidebar-item-has-url > .fi-sidebar-item-btn:hover > .fi-icon,
+.fi-sidebar-item.fi-sidebar-item-has-url > .fi-sidebar-item-btn:focus-visible > .fi-icon,
+.fi-sidebar-group-dropdown-trigger-btn:hover > .fi-sidebar-group-label,
+.fi-sidebar-group-dropdown-trigger-btn:focus-visible > .fi-sidebar-group-label,
+.fi-sidebar-group-dropdown-trigger-btn:hover > .fi-icon,
+.fi-sidebar-group-dropdown-trigger-btn:focus-visible > .fi-icon,
+.fi-sidebar-database-notifications-btn:hover > .fi-sidebar-database-notifications-btn-label,
+.fi-sidebar-database-notifications-btn:focus-visible > .fi-sidebar-database-notifications-btn-label,
+.fi-sidebar-database-notifications-btn:hover > .fi-icon,
+.fi-sidebar-database-notifications-btn:focus-visible > .fi-icon {
+    color: #f8feff;
+}
+
+.fi-sidebar-item.fi-active > .fi-sidebar-item-btn {
+    background: color-mix(in srgb, var(--dex-teal, #0ea5a6) 38%, #ffffff);
+}
+
+.fi-sidebar-item.fi-active.fi-sidebar-item-has-url > .fi-sidebar-item-btn:hover,
+.fi-sidebar-item.fi-active.fi-sidebar-item-has-url > .fi-sidebar-item-btn:focus-visible {
+    background: color-mix(in srgb, var(--dex-teal, #0ea5a6) 48%, #ffffff);
+}
+
+.fi-sidebar-item.fi-active > .fi-sidebar-item-btn > .fi-sidebar-item-label,
+.fi-sidebar-item.fi-active > .fi-sidebar-item-btn > .fi-icon {
+    color: #062632;
+}
+
+.fi-section:not(.fi-section-not-contained):not(.fi-aside),
+.fi-section.fi-aside > .fi-section-content-ctn {
+    background: var(--dex-surface, #3d2840);
+    border-color: var(--dex-border, #5c3d5e);
+    border-radius: var(--dex-radius-lg, 12px);
+    box-shadow: var(--dex-shadow-sm, 0 1px 3px rgba(0, 0, 0, 0.4));
+}
+
+.fi-section .fi-section-header-heading {
+    color: var(--dex-text, #f5eff3);
+    font-family: var(--dex-font-ui, "Space Grotesk"), system-ui, sans-serif;
+}
+
+.fi-section .fi-section-header-description {
+    color: var(--dex-text-muted, #c4aebb);
+}
+
+.fi-input-wrp {
+    background: color-mix(in srgb, var(--dex-surface-high, #4e3352) 92%, black);
+    border-color: var(--dex-border, #5c3d5e);
+    border-radius: var(--dex-radius, 8px);
+}
+
+.fi-input-wrp:focus-within {
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--dex-teal, #00929f) 35%, transparent);
+}
+
+input.fi-input,
+textarea.fi-input,
+select.fi-input {
+    color: var(--dex-text, #f5eff3);
+}
+
+input.fi-input::placeholder,
+textarea.fi-input::placeholder {
+    color: var(--dex-text-subtle, #8b6b7a);
+}
+
+.fi-btn.fi-color {
+    border-radius: var(--dex-radius, 8px);
+    font-weight: 600;
+    transition: all var(--dex-transition-fast, 150ms ease);
+}
+
+.fi-btn.fi-color:not(.fi-outlined) {
+    background: var(--dex-gold, #d4860a);
+    color: var(--dex-gold-contrast, #1a1000);
+    box-shadow: var(--dex-shadow-sm, 0 1px 3px rgba(0, 0, 0, 0.4));
+}
+
+.fi-btn.fi-color:not(.fi-outlined):hover,
+.fi-btn.fi-color:not(.fi-outlined):focus-visible {
+    background: var(--dex-gold-light, #f5a623);
+    box-shadow: var(--dex-shadow-glow-gold, 0 0 16px rgba(212, 134, 10, 0.35));
+}
+
+.fi-btn.fi-outlined.fi-color {
+    color: var(--dex-teal-light, #00b8c8);
+    border-color: var(--dex-teal, #00929f);
+}
+
+.fi-btn.fi-outlined.fi-color:hover,
+.fi-btn.fi-outlined.fi-color:focus-visible {
+    background: var(--dex-teal-muted, #0c3f44);
+    color: var(--dex-text, #f5eff3);
+    box-shadow: var(--dex-shadow-glow-teal, 0 0 16px rgba(0, 146, 159, 0.35));
+}
+
+/* Main content area (right side) */
+.fi-main-ctn {
+    background:
+        radial-gradient(1100px 420px at 88% -12%, rgba(0, 146, 159, 0.2), transparent 60%),
+        linear-gradient(
+            180deg,
+            color-mix(in srgb, var(--dex-bg, #2d1b2e) 96%, black) 0%,
+            color-mix(in srgb, var(--dex-bg, #2d1b2e) 88%, black) 100%
+        );
+}
+
+.fi-main {
+    color: var(--dex-text, #f5eff3);
+}
+
+.fi-header-heading {
+    color: var(--dex-text, #f5eff3);
+    font-family: var(--dex-font-display, "Barlow Condensed"), system-ui, sans-serif;
+    letter-spacing: var(--dex-display-spacing, 0.04em);
+    text-transform: uppercase;
+}
+
+.fi-header-subheading,
+.fi-breadcrumbs,
+.fi-breadcrumbs-item-label {
+    color: var(--dex-text-muted, #c4aebb);
+}
+
+/* Widgets on dashboard */
+.fi-account-widget-heading,
+.fi-filament-info-widget-logo {
+    color: var(--dex-text, #f5eff3);
+}
+
+.fi-account-widget-user-name,
+.fi-filament-info-widget-version {
+    color: var(--dex-text-muted, #c4aebb);
+}
+
+/* Table container and header */
+.fi-ta-ctn {
+    background: color-mix(in srgb, var(--dex-surface, #3d2840) 96%, black);
+    border: 1px solid var(--dex-border, #5c3d5e);
+    border-radius: var(--dex-radius-xl, 16px);
+    box-shadow: var(--dex-shadow, 0 4px 12px rgba(0, 0, 0, 0.5));
+}
+
+.fi-ta-ctn .fi-ta-header,
+.fi-ta-ctn .fi-ta-header-toolbar,
+.fi-ta-ctn .fi-ta-filters-above-content-ctn,
+.fi-ta-ctn .fi-pagination {
+    border-color: color-mix(in srgb, var(--dex-border, #5c3d5e) 80%, black);
+}
+
+.fi-ta-ctn .fi-ta-header-heading,
+.fi-ta-ctn .fi-ta-filters-heading {
+    color: var(--dex-text, #f5eff3);
+}
+
+.fi-ta-ctn .fi-ta-header-description {
+    color: var(--dex-text-muted, #c4aebb);
+}
+
+/* Table surface */
+.fi-ta-table > thead > tr {
+    background: linear-gradient(
+        180deg,
+        color-mix(in srgb, var(--dex-surface-high, #4e3352) 92%, black) 0%,
+        color-mix(in srgb, var(--dex-surface, #3d2840) 88%, black) 100%
+    );
+}
+
+.fi-ta-table > thead > tr > th,
+.fi-ta-header-cell {
+    color: color-mix(in srgb, var(--dex-gold-light, #f5a623) 64%, white);
+    font-weight: 600;
+    letter-spacing: 0.01em;
+}
+
+.fi-ta-table > tbody {
+    background: color-mix(in srgb, var(--dex-surface, #3d2840) 92%, black);
+}
+
+.fi-ta-table > tbody > tr {
+    border-color: color-mix(in srgb, var(--dex-border, #5c3d5e) 78%, black);
+}
+
+.fi-ta-table > tbody > tr:nth-child(odd) {
+    background: color-mix(in srgb, var(--dex-surface, #3d2840) 95%, black);
+}
+
+.fi-ta-table > tbody > tr:nth-child(even) {
+    background: color-mix(in srgb, var(--dex-surface-high, #4e3352) 82%, black);
+}
+
+.fi-ta-table .fi-ta-cell-content,
+.fi-ta-table .fi-ta-text-item-label,
+.fi-ta-table .fi-ta-text-item-list {
+    color: var(--dex-text, #f5eff3);
+    font-weight: 500;
+}
+
+.fi-ta-table .fi-ta-text-item,
+.fi-ta-table .fi-ta-text-item span,
+.fi-ta-table .fi-ta-col,
+.fi-ta-table .fi-ta-cell {
+    color: var(--dex-text, #f5eff3);
+}
+
+.fi-ta-table .fi-ta-text-description,
+.fi-ta-table .fi-ta-text-list-limited-message,
+.fi-ta-table .fi-ta-text-summary {
+    color: var(--dex-text-muted, #c4aebb);
+}
+
+.fi-ta-table .fi-ta-text-summary-label,
+.fi-ta-table .fi-ta-summary-row-heading-cell,
+.fi-ta-table .fi-ta-summary-header-cell {
+    color: color-mix(in srgb, var(--dex-gold-light, #f5a623) 58%, white);
+}
+
+.fi-ta-table .fi-link,
+.fi-ta-table a {
+    color: var(--dex-teal-light, #00b8c8);
+}
+
+.fi-ta-table .fi-link:hover,
+.fi-ta-table a:hover {
+    color: color-mix(in srgb, var(--dex-teal-light, #00b8c8) 72%, white);
+}
+
+.fi-ta-row.fi-clickable:hover {
+    background: color-mix(in srgb, var(--dex-teal, #00929f) 24%, black);
+}
+
+.fi-ta-row.fi-selected:not(.fi-striped) {
+    background: color-mix(in srgb, var(--dex-gold, #d4860a) 22%, black);
+}
+
+.fi-ta-row.fi-selected:not(.fi-striped) .fi-ta-cell-content {
+    color: #fff8eb;
+}
+
+/* Badges / statuses in tables */
+.fi-badge {
+    background: color-mix(in srgb, var(--dex-surface-high, #4e3352) 88%, black);
+    color: var(--dex-text, #f5eff3);
+    border-color: color-mix(in srgb, var(--dex-border, #5c3d5e) 72%, black);
+    font-weight: 600;
+}
+
+.fi-badge.fi-color {
+    background: var(--bg, color-mix(in srgb, var(--dex-teal-muted, #0c3f44) 70%, black));
+    color: var(--text, var(--dex-text, #f5eff3));
+    border-color: color-mix(in srgb, var(--bg, #0c3f44) 72%, white);
+}
+
+.fi-pagination .fi-input-wrp,
+.fi-ta-ctn .fi-input-wrp {
+    background: color-mix(in srgb, var(--dex-surface-high, #4e3352) 88%, black);
+}
+
+.fi-pagination .fi-btn,
+.fi-ta-ctn .fi-btn {
+    color: var(--dex-text, #f5eff3);
+}
+
+/* Pagination: stronger contrast and branded controls */
+.fi-pagination {
+    gap: var(--dex-space-3, 0.75rem);
+}
+
+.fi-pagination .fi-pagination-records-per-page-select-ctn {
+    padding: 0.15rem;
+    border-radius: var(--dex-radius-lg, 12px);
+    background: color-mix(in srgb, var(--dex-surface-high, #4e3352) 84%, black);
+    border: 1px solid color-mix(in srgb, var(--dex-border, #5c3d5e) 82%, black);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.fi-pagination .fi-pagination-records-per-page-select-ctn .fi-input-wrp {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.fi-pagination .fi-pagination-records-per-page-select-ctn .fi-input,
+.fi-pagination .fi-pagination-records-per-page-select-ctn .fi-input-wrp-label {
+    color: color-mix(in srgb, var(--dex-text, #f5eff3) 92%, white);
+}
+
+.fi-pagination .fi-pagination-items {
+    background: color-mix(in srgb, var(--dex-surface-high, #4e3352) 86%, black);
+    border: 1px solid color-mix(in srgb, var(--dex-border, #5c3d5e) 82%, black);
+    box-shadow: var(--dex-shadow-sm, 0 1px 3px rgba(0, 0, 0, 0.4));
+}
+
+.fi-pagination .fi-pagination-item.fi-active .fi-pagination-item-btn {
+    background: color-mix(in srgb, var(--dex-gold, #d4860a) 24%, black);
+}
+
+.fi-pagination .fi-pagination-item.fi-active .fi-pagination-item-label {
+    color: color-mix(in srgb, var(--dex-gold-light, #f5a623) 72%, white);
+}
+
+.fi-pagination .fi-pagination-item-btn .fi-pagination-item-label {
+    color: var(--dex-text, #f5eff3);
+}
+
+.fi-pagination .fi-pagination-item-btn .fi-icon {
+    color: var(--dex-text-muted, #c4aebb);
+}
+
+.fi-pagination .fi-pagination-item-btn:enabled:hover {
+    background: color-mix(in srgb, var(--dex-teal, #00929f) 24%, black);
+}
+
+.fi-pagination .fi-btn:not(.fi-disabled):not([disabled]) {
+    background: color-mix(in srgb, var(--dex-surface-high, #4e3352) 84%, black);
+    border: 1px solid color-mix(in srgb, var(--dex-border, #5c3d5e) 85%, black);
+    color: var(--dex-text, #f5eff3);
+}
+
+.fi-pagination .fi-btn:not(.fi-disabled):not([disabled]):hover,
+.fi-pagination .fi-btn:not(.fi-disabled):not([disabled]):focus-visible {
+    background: color-mix(in srgb, var(--dex-teal, #00929f) 24%, black);
+    border-color: color-mix(in srgb, var(--dex-teal-light, #00b8c8) 62%, black);
+}
+
+.fi-pagination .fi-btn.fi-disabled,
+.fi-pagination .fi-btn[disabled] {
+    background: color-mix(in srgb, var(--dex-surface, #3d2840) 82%, black);
+    border: 1px solid color-mix(in srgb, var(--dex-border, #5c3d5e) 60%, black);
+    color: var(--dex-text-subtle, #8b6b7a);
+    opacity: 1;
+}
+
+/* Table scrollbar: slim and brand-styled */
+.fi-ta-content-ctn {
+    scrollbar-width: thin;
+    scrollbar-color: color-mix(in srgb, var(--dex-teal, #00929f) 70%, white)
+        color-mix(in srgb, var(--dex-surface-inset, #221528) 82%, black);
+}
+
+.fi-ta-content-ctn::-webkit-scrollbar {
+    height: 8px;
+    width: 8px;
+}
+
+.fi-ta-content-ctn::-webkit-scrollbar-track {
+    background: color-mix(in srgb, var(--dex-surface-inset, #221528) 82%, black);
+    border-radius: 9999px;
+}
+
+.fi-ta-content-ctn::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+        180deg,
+        color-mix(in srgb, var(--dex-teal-light, #00b8c8) 78%, white) 0%,
+        var(--dex-teal, #00929f) 100%
+    );
+    border-radius: 9999px;
+    border: 1px solid color-mix(in srgb, var(--dex-teal-dark, #006e7a) 72%, black);
+}
+
+.fi-ta-content-ctn::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(
+        180deg,
+        color-mix(in srgb, var(--dex-gold-light, #f5a623) 72%, white) 0%,
+        var(--dex-gold, #d4860a) 100%
+    );
+}
+
+/* Vibrant pass: stronger contrast and brighter accents */
+.fi-topbar {
+    border-bottom-color: color-mix(in srgb, var(--dex-gold-light, #f5a623) 58%, transparent);
+    box-shadow:
+        0 10px 28px rgba(0, 0, 0, 0.35),
+        0 0 0 1px color-mix(in srgb, var(--dex-teal-light, #00b8c8) 22%, transparent) inset;
+}
+
+.fi-sidebar {
+    border-right-color: color-mix(in srgb, var(--dex-gold, #d4860a) 32%, transparent);
+}
+
+.fi-sidebar-item.fi-active > .fi-sidebar-item-btn {
+    background: linear-gradient(
+        90deg,
+        color-mix(in srgb, var(--dex-teal-light, #00b8c8) 48%, white) 0%,
+        color-mix(in srgb, var(--dex-gold-light, #f5a623) 44%, white) 100%
+    );
+    box-shadow: 0 0 0 1px color-mix(in srgb, var(--dex-gold, #d4860a) 32%, black) inset;
+}
+
+.fi-sidebar-item.fi-sidebar-item-has-url > .fi-sidebar-item-btn:hover,
+.fi-sidebar-item.fi-sidebar-item-has-url > .fi-sidebar-item-btn:focus-visible {
+    background: color-mix(in srgb, var(--dex-teal-light, #00b8c8) 34%, black);
+}
+
+.fi-header-heading {
+    color: color-mix(in srgb, var(--dex-gold-light, #f5a623) 68%, white);
+    text-shadow: 0 0 14px rgba(245, 166, 35, 0.2);
+}
+
+.fi-section {
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.35),
+        0 0 0 1px color-mix(in srgb, var(--dex-teal, #00929f) 10%, transparent);
+}
+
+.fi-btn.fi-color:not(.fi-outlined) {
+    background: linear-gradient(
+        180deg,
+        color-mix(in srgb, var(--dex-gold-light, #f5a623) 90%, white) 0%,
+        var(--dex-gold, #d4860a) 100%
+    );
+}
+
+.fi-btn.fi-color:not(.fi-outlined):hover,
+.fi-btn.fi-color:not(.fi-outlined):focus-visible {
+    background: linear-gradient(
+        180deg,
+        color-mix(in srgb, var(--dex-gold-light, #f5a623) 100%, white) 0%,
+        color-mix(in srgb, var(--dex-gold, #d4860a) 88%, white) 100%
+    );
+}
+
+.fi-btn.fi-outlined.fi-color {
+    color: color-mix(in srgb, var(--dex-teal-light, #00b8c8) 78%, white);
+    border-color: color-mix(in srgb, var(--dex-teal-light, #00b8c8) 74%, black);
+}
+
+.fi-btn.fi-outlined.fi-color:hover,
+.fi-btn.fi-outlined.fi-color:focus-visible {
+    background: color-mix(in srgb, var(--dex-teal-light, #00b8c8) 34%, black);
+}
+
+.fi-ta-table > thead > tr > th,
+.fi-ta-header-cell {
+    color: color-mix(in srgb, var(--dex-gold-light, #f5a623) 78%, white);
+}
+
+.fi-ta-table > tbody > tr:nth-child(odd) {
+    background: color-mix(in srgb, var(--dex-surface, #3d2840) 90%, black);
+}
+
+.fi-ta-table > tbody > tr:nth-child(even) {
+    background: color-mix(in srgb, var(--dex-surface-high, #4e3352) 76%, black);
+}
+
+.fi-ta-row.fi-clickable:hover {
+    background: linear-gradient(
+        90deg,
+        color-mix(in srgb, var(--dex-teal, #00929f) 34%, black) 0%,
+        color-mix(in srgb, var(--dex-info, #3b82f6) 16%, black) 100%
+    );
+}
+
+.fi-ta-row.fi-selected:not(.fi-striped) {
+    background: linear-gradient(
+        90deg,
+        color-mix(in srgb, var(--dex-gold, #d4860a) 26%, black) 0%,
+        color-mix(in srgb, var(--dex-gold-light, #f5a623) 16%, black) 100%
+    );
+}
+
+.fi-badge.fi-color {
+    box-shadow: 0 0 0 1px color-mix(in srgb, var(--bg, #0c3f44) 60%, white) inset;
+}
+
+.fi-pagination .fi-pagination-item.fi-active .fi-pagination-item-btn {
+    background: linear-gradient(
+        180deg,
+        color-mix(in srgb, var(--dex-gold-light, #f5a623) 40%, black) 0%,
+        color-mix(in srgb, var(--dex-gold, #d4860a) 24%, black) 100%
+    );
+}
+
+.fi-pagination .fi-pagination-item-btn:enabled:hover {
+    background: color-mix(in srgb, var(--dex-teal-light, #00b8c8) 34%, black);
+}
+
+/* Button system mapping:
+   - Primary: colored Filament actions (.fi-color)
+   - Secondary: neutral/outlined actions (e.g. Cancel)
+   - Navigation menu buttons are excluded (they use .fi-sidebar-* classes). */
+.fi-btn.fi-color:not(.fi-outlined) {
+    background: linear-gradient(
+        180deg,
+        color-mix(in srgb, var(--dex-gold-light, #f5a623) 90%, white) 0%,
+        var(--dex-gold, #d4860a) 100%
+    );
+    color: var(--dex-gold-contrast, #1a1000);
+    border: 1px solid color-mix(in srgb, var(--dex-gold-dark, #a86508) 72%, black);
+    box-shadow: var(--dex-shadow-sm, 0 1px 3px rgba(0, 0, 0, 0.4));
+}
+
+.fi-btn.fi-color:not(.fi-outlined):not(.fi-disabled):not([disabled]):hover,
+.fi-btn.fi-color:not(.fi-outlined):not(.fi-disabled):not([disabled]):focus-visible {
+    background: linear-gradient(
+        180deg,
+        color-mix(in srgb, var(--dex-gold-light, #f5a623) 96%, white) 0%,
+        color-mix(in srgb, var(--dex-gold, #d4860a) 88%, white) 100%
+    );
+    border-color: color-mix(in srgb, var(--dex-gold-light, #f5a623) 64%, black);
+    box-shadow:
+        var(--dex-shadow-sm, 0 1px 3px rgba(0, 0, 0, 0.4)),
+        var(--dex-shadow-glow-gold, 0 0 16px rgba(212, 134, 10, 0.35));
+}
+
+.fi-btn.fi-outlined,
+.fi-btn:not(.fi-color) {
+    background: color-mix(in srgb, var(--dex-surface-high, #4e3352) 84%, black);
+    color: color-mix(in srgb, var(--dex-teal-light, #00b8c8) 78%, white);
+    border: 1.5px solid color-mix(in srgb, var(--dex-teal, #00929f) 72%, black);
+    box-shadow: none;
+}
+
+.fi-btn.fi-outlined:not(.fi-disabled):not([disabled]):hover,
+.fi-btn.fi-outlined:not(.fi-disabled):not([disabled]):focus-visible,
+.fi-btn:not(.fi-color):not(.fi-disabled):not([disabled]):hover,
+.fi-btn:not(.fi-color):not(.fi-disabled):not([disabled]):focus-visible {
+    background: color-mix(in srgb, var(--dex-teal-light, #00b8c8) 28%, black);
+    color: var(--dex-text, #f5eff3);
+    border-color: color-mix(in srgb, var(--dex-teal-light, #00b8c8) 76%, black);
+    box-shadow: var(--dex-shadow-glow-teal, 0 0 16px rgba(0, 146, 159, 0.35));
+}
+
+.fi-btn.fi-disabled,
+.fi-btn[disabled] {
+    background: color-mix(in srgb, var(--dex-surface, #3d2840) 82%, black);
+    color: var(--dex-text-subtle, #8b6b7a);
+    border: 1px solid color-mix(in srgb, var(--dex-border, #5c3d5e) 60%, black);
+    opacity: 1;
+}
+
+/* Icon-only actions follow secondary style so controls stay consistent. */
+.fi-icon-btn {
+    border: 1px solid color-mix(in srgb, var(--dex-teal, #00929f) 62%, black);
+    background: color-mix(in srgb, var(--dex-surface-high, #4e3352) 84%, black);
+    color: color-mix(in srgb, var(--dex-teal-light, #00b8c8) 78%, white);
+    border-radius: var(--dex-radius, 8px);
+}
+
+.fi-icon-btn:not(.fi-disabled):not([disabled]):hover,
+.fi-icon-btn:not(.fi-disabled):not([disabled]):focus-visible {
+    background: color-mix(in srgb, var(--dex-teal-light, #00b8c8) 26%, black);
+    color: var(--dex-text, #f5eff3);
+    border-color: color-mix(in srgb, var(--dex-teal-light, #00b8c8) 78%, black);
+}
+
+/* Form contrast boost (Edit pages like "Edit Item") */
+.fi-fo-field .fi-fo-field-label-content {
+    color: color-mix(in srgb, var(--dex-text, #f5eff3) 92%, white);
+    font-weight: 600;
+}
+
+.fi-fo-field .fi-fo-field-label-required-mark {
+    color: var(--dex-gold-light, #f5a623);
+}
+
+.fi-fo-field [class*="helper"],
+.fi-fo-field [class*="description"],
+.fi-fo-field [class*="hint"] {
+    color: var(--dex-text-muted, #c4aebb);
+}
+
+.fi-fo-field .fi-fo-field-wrp-error-message {
+    color: color-mix(in srgb, var(--dex-error, #ef4444) 78%, white);
+}
+
+.fi-fo-field .fi-input-wrp {
+    background: color-mix(in srgb, var(--dex-surface-high, #4e3352) 90%, black);
+    border-color: color-mix(in srgb, var(--dex-teal, #00929f) 28%, var(--dex-border, #5c3d5e));
+}
+
+.fi-fo-field .fi-input-wrp:focus-within {
+    box-shadow:
+        0 0 0 2px color-mix(in srgb, var(--dex-teal-light, #00b8c8) 38%, transparent),
+        0 0 0 1px color-mix(in srgb, var(--dex-teal, #00929f) 44%, black) inset;
+}
+
+.fi-fo-field input.fi-input,
+.fi-fo-field textarea,
+.fi-fo-field select.fi-input {
+    color: color-mix(in srgb, var(--dex-text, #f5eff3) 96%, white);
+}
+
+.fi-fo-field input.fi-input::placeholder,
+.fi-fo-field textarea::placeholder {
+    color: color-mix(in srgb, var(--dex-text-subtle, #8b6b7a) 72%, white);
+}
+
+.fi-fo-file-upload .filepond--root {
+    background: color-mix(in srgb, var(--dex-surface-high, #4e3352) 90%, black);
+    border: 1px solid color-mix(in srgb, var(--dex-teal, #00929f) 28%, var(--dex-border, #5c3d5e));
+}
+
+.fi-fo-file-upload .filepond--drop-label,
+.fi-fo-file-upload .filepond--drop-label label {
+    color: var(--dex-text-muted, #c4aebb);
+}
+
+.fi-fo-file-upload .filepond--label-action {
+    color: color-mix(in srgb, var(--dex-gold-light, #f5a623) 72%, white);
+}
+
+.fi-fo-file-upload .filepond--label-action:hover {
+    color: color-mix(in srgb, var(--dex-gold-light, #f5a623) 90%, white);
+}
+
+/* Tom Select / searchable selects (e.g. Edit Item -> Locatie) */
+.fi-fo-field .ts-wrapper .ts-control {
+    background: color-mix(in srgb, var(--dex-surface-high, #4e3352) 90%, black);
+    border: 1px solid color-mix(in srgb, var(--dex-teal, #00929f) 34%, var(--dex-border, #5c3d5e));
+    border-radius: var(--dex-radius, 8px);
+    color: var(--dex-text, #f5eff3);
+    box-shadow: none;
+}
+
+.fi-fo-field .ts-wrapper.focus .ts-control {
+    box-shadow:
+        0 0 0 2px color-mix(in srgb, var(--dex-teal-light, #00b8c8) 40%, transparent),
+        0 0 0 1px color-mix(in srgb, var(--dex-teal, #00929f) 44%, black) inset;
+}
+
+.fi-fo-field .ts-wrapper .ts-control .item,
+.fi-fo-field .ts-wrapper .ts-control input {
+    color: var(--dex-text, #f5eff3);
+}
+
+.fi-fo-field .ts-wrapper .ts-control input::placeholder {
+    color: var(--dex-text-muted, #c4aebb);
+}
+
+.fi-fo-field .ts-wrapper.multi .ts-control > div {
+    background: color-mix(in srgb, var(--dex-teal-muted, #0c3f44) 74%, black);
+    color: color-mix(in srgb, var(--dex-teal-light, #00b8c8) 70%, white);
+    border: 1px solid color-mix(in srgb, var(--dex-teal, #00929f) 58%, black);
+    border-radius: var(--dex-radius-sm, 4px);
+}
+
+.fi-fo-field .ts-wrapper .ts-control .clear-button,
+.fi-fo-field .ts-wrapper .ts-control .remove,
+.fi-fo-field .ts-wrapper .ts-control .dropdown-active {
+    color: var(--dex-text-muted, #c4aebb);
+}
+
+.fi-fo-field .ts-wrapper .ts-dropdown {
+    background: color-mix(in srgb, var(--dex-surface, #3d2840) 95%, black);
+    border: 1px solid color-mix(in srgb, var(--dex-border, #5c3d5e) 82%, black);
+    border-radius: var(--dex-radius, 8px);
+    box-shadow: var(--dex-shadow, 0 4px 12px rgba(0, 0, 0, 0.5));
+}
+
+.fi-fo-field .ts-wrapper .ts-dropdown .option,
+.fi-fo-field .ts-wrapper .ts-dropdown .create,
+.fi-fo-field .ts-wrapper .ts-dropdown .no-results {
+    color: var(--dex-text, #f5eff3);
+}
+
+.fi-fo-field .ts-wrapper .ts-dropdown .active {
+    background: color-mix(in srgb, var(--dex-teal, #00929f) 30%, black);
+    color: #ffffff;
+}
+
+.fi-fo-field .ts-wrapper .ts-dropdown .selected {
+    background: color-mix(in srgb, var(--dex-gold, #d4860a) 24%, black);
+    color: color-mix(in srgb, var(--dex-gold-light, #f5a623) 74%, white);
+}
+
+/* Hard override for Tom Select rendering layers (dropdown can be mounted outside form) */
+.ts-wrapper .ts-control,
+.ts-wrapper.single .ts-control,
+.ts-wrapper.multi .ts-control {
+    background: color-mix(in srgb, var(--dex-surface-high, #4e3352) 90%, black) !important;
+    border-color: color-mix(in srgb, var(--dex-teal, #00929f) 34%, var(--dex-border, #5c3d5e)) !important;
+    color: var(--dex-text, #f5eff3) !important;
+}
+
+.ts-wrapper.focus .ts-control {
+    box-shadow:
+        0 0 0 2px color-mix(in srgb, var(--dex-teal-light, #00b8c8) 40%, transparent),
+        0 0 0 1px color-mix(in srgb, var(--dex-teal, #00929f) 44%, black) inset !important;
+}
+
+.ts-wrapper .ts-control input,
+.ts-wrapper .ts-control input::placeholder,
+.ts-wrapper .ts-control .item,
+.ts-wrapper .ts-control .item *,
+.ts-wrapper .ts-control .clear-button,
+.ts-wrapper .ts-control .remove,
+.ts-wrapper .ts-control .dropdown-active {
+    color: var(--dex-text, #f5eff3) !important;
+    opacity: 1 !important;
+}
+
+.ts-wrapper.multi .ts-control > div {
+    background: color-mix(in srgb, var(--dex-teal-muted, #0c3f44) 74%, black) !important;
+    color: color-mix(in srgb, var(--dex-teal-light, #00b8c8) 76%, white) !important;
+    border: 1px solid color-mix(in srgb, var(--dex-teal, #00929f) 58%, black) !important;
+}
+
+.ts-dropdown,
+.ts-dropdown .dropdown-content {
+    background: color-mix(in srgb, var(--dex-surface, #3d2840) 95%, black) !important;
+    border-color: color-mix(in srgb, var(--dex-border, #5c3d5e) 82%, black) !important;
+}
+
+.ts-dropdown .option,
+.ts-dropdown .create,
+.ts-dropdown .no-results,
+.ts-dropdown .option *,
+.ts-dropdown .create * {
+    color: var(--dex-text, #f5eff3) !important;
+    opacity: 1 !important;
+}
+
+.ts-dropdown .option.active,
+.ts-dropdown .create.active {
+    background: color-mix(in srgb, var(--dex-teal, #00929f) 30%, black) !important;
+    color: #ffffff !important;
+}
+
+.ts-dropdown .option.selected {
+    background: color-mix(in srgb, var(--dex-gold, #d4860a) 26%, black) !important;
+    color: color-mix(in srgb, var(--dex-gold-light, #f5a623) 76%, white) !important;
+}
+
+/* Actual Filament searchable select component (fi-select-input-*) */
+.fi-select-input-ctn .fi-select-input-btn {
+    background: color-mix(in srgb, var(--dex-surface-high, #4e3352) 90%, black) !important;
+    border: 1px solid color-mix(in srgb, var(--dex-teal, #00929f) 34%, var(--dex-border, #5c3d5e)) !important;
+    color: var(--dex-text, #f5eff3) !important;
+}
+
+.fi-select-input-ctn .fi-select-input-btn:focus-visible,
+.fi-select-input-ctn .fi-select-input-btn[aria-expanded="true"] {
+    box-shadow:
+        0 0 0 2px color-mix(in srgb, var(--dex-teal-light, #00b8c8) 40%, transparent),
+        0 0 0 1px color-mix(in srgb, var(--dex-teal, #00929f) 44%, black) inset !important;
+}
+
+.fi-select-input-ctn .fi-select-input-value-label,
+.fi-select-input-ctn .fi-select-input-placeholder,
+.fi-select-input-ctn .fi-select-input-value-ctn,
+.fi-select-input-ctn .fi-select-input-value-ctn * {
+    color: var(--dex-text, #f5eff3) !important;
+    opacity: 1 !important;
+}
+
+.fi-select-input-ctn .fi-select-input-placeholder {
+    color: var(--dex-text-muted, #c4aebb) !important;
+}
+
+.fi-dropdown-panel.fi-scrollable {
+    background: color-mix(in srgb, var(--dex-surface, #3d2840) 96%, black) !important;
+    border: 1px solid color-mix(in srgb, var(--dex-border, #5c3d5e) 82%, black) !important;
+    box-shadow: var(--dex-shadow, 0 4px 12px rgba(0, 0, 0, 0.5)) !important;
+}
+
+.fi-select-input-search-ctn {
+    background: color-mix(in srgb, var(--dex-surface-high, #4e3352) 86%, black) !important;
+    border-bottom: 1px solid color-mix(in srgb, var(--dex-border, #5c3d5e) 80%, black) !important;
+}
+
+.fi-select-input-search-ctn .fi-input {
+    color: var(--dex-text, #f5eff3) !important;
+}
+
+.fi-select-input-search-ctn .fi-input::placeholder {
+    color: var(--dex-text-muted, #c4aebb) !important;
+    opacity: 1 !important;
+}
+
+.fi-dropdown-list-item.fi-select-input-option {
+    background: transparent !important;
+    color: var(--dex-text, #f5eff3) !important;
+}
+
+.fi-dropdown-list-item.fi-select-input-option:hover,
+.fi-dropdown-list-item.fi-select-input-option:focus {
+    background: color-mix(in srgb, var(--dex-teal, #00929f) 30%, black) !important;
+    color: #ffffff !important;
+}
+
+.fi-dropdown-list-item.fi-select-input-option.fi-selected,
+.fi-dropdown-list-item.fi-select-input-option[aria-selected="true"] {
+    background: color-mix(in srgb, var(--dex-gold, #d4860a) 26%, black) !important;
+    color: color-mix(in srgb, var(--dex-gold-light, #f5a623) 78%, white) !important;
+}
+
+.fi-select-input-message {
+    color: var(--dex-text-muted, #c4aebb) !important;
+}
+
+/* Pagination teal accent pass */
+.fi-pagination {
+    padding: 0.45rem 0.65rem !important;
+    border-radius: var(--dex-radius-lg, 12px) !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.fi-pagination .fi-pagination-records-per-page-select-ctn {
+    background: color-mix(in srgb, var(--dex-surface-high, #4e3352) 84%, black) !important;
+    border-color: color-mix(in srgb, var(--dex-teal-light, #00b8c8) 62%, black) !important;
+}
+
+.fi-pagination .fi-pagination-records-per-page-select-ctn .fi-input,
+.fi-pagination .fi-pagination-records-per-page-select-ctn .fi-input-wrp-label,
+.fi-pagination .fi-pagination-records-per-page-select-ctn .fi-icon {
+    color: color-mix(in srgb, var(--dex-teal-light, #00b8c8) 76%, white) !important;
+    opacity: 1 !important;
+}
+
+.fi-pagination .fi-pagination-items {
+    background: color-mix(in srgb, var(--dex-surface-high, #4e3352) 72%, black) !important;
+    border-color: color-mix(in srgb, var(--dex-teal-light, #00b8c8) 44%, black) !important;
+}
+
+.fi-pagination .fi-pagination-item-btn .fi-pagination-item-label {
+    color: color-mix(in srgb, var(--dex-text, #f5eff3) 92%, white) !important;
+}
+
+.fi-pagination .fi-pagination-item.fi-active .fi-pagination-item-btn {
+    background: linear-gradient(
+        180deg,
+        color-mix(in srgb, var(--dex-teal-light, #00b8c8) 50%, black) 0%,
+        color-mix(in srgb, var(--dex-teal, #00929f) 34%, black) 100%
+    ) !important;
+}
+
+.fi-pagination .fi-pagination-item.fi-active .fi-pagination-item-label {
+    color: #eaffff !important;
+}
+
+.fi-pagination .fi-pagination-item-btn:enabled:hover,
+.fi-pagination .fi-btn:not(.fi-disabled):not([disabled]):hover,
+.fi-pagination .fi-btn:not(.fi-disabled):not([disabled]):focus-visible {
+    background: color-mix(in srgb, var(--dex-teal-light, #00b8c8) 42%, black) !important;
+    border-color: color-mix(in srgb, var(--dex-teal-light, #00b8c8) 74%, black) !important;
+    color: #f4ffff !important;
+}
