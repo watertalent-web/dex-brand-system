@@ -1,10 +1,11 @@
 {
   "name": "@dex/brand",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Shared DEX design tokens and Tailwind preset",
   "type": "module",
   "exports": {
     "./tokens.css": "./src/tokens.css",
+    "./filament.css": "./src/filament.css",
     "./tailwind": "./src/tailwind.ts"
   },
   "files": [

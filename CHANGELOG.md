@@ -2,6 +2,11 @@
 
 All notable changes to this package are documented in this file.
 
+## v1.1.0 - 2026-05-19
+
+- Added exported Filament admin theme bridge at `@dex/brand/filament.css`
+- Documented Laravel Filament usage so admin styling works out of the box from the package
+
 ## v1.0.0 - 2026-05-18
 
 - Initial private GitHub package structure for `@dex/brand`
