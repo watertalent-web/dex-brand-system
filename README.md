@@ -5,6 +5,7 @@ Reusable DEX design system assets distributed from a public GitHub repository as
 ## What is included
 
 - `@dex/brand/tokens.css` -> shared CSS custom properties and utility classes
+- `@dex/brand/filament.css` -> Filament admin theme bridge based on DEX brand tokens
 - `@dex/brand/tailwind` -> shared Tailwind preset (`src/tailwind.ts`)
 
 ## Install from GitHub
@@ -62,6 +63,18 @@ export default {
   ],
 } satisfies Config;
 ```
+
+## Usage in Laravel Filament
+
+Import the Filament bridge stylesheet in your panel theme file:
+
+```css
+@import "@dex/brand/tokens.css";
+@import "@dex/brand/filament.css";
+```
+
+Then register that theme in your panel provider as usual (for example via `->viteTheme()`).
+The exported `filament.css` file maps DEX tokens to Filament's expected color and font variables, so the admin UI picks up the package styles out of the box.
 
 ## Usage in plain CSS projects
 
