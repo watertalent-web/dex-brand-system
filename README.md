@@ -29,6 +29,8 @@ Import tokens in your global stylesheet:
 @import "@dex/brand/tokens.css";
 ```
 
+This works in any frontend stack, even without Tailwind.
+
 Use the Tailwind preset in `tailwind.config.ts`:
 
 ```ts
@@ -63,3 +65,5 @@ Pin to a tag in your project `package.json`, for example:
   }
 }
 ```
+
+When a newer package release is available, update the tag (for example from `v1.1.0` to `v1.1.1`) and reinstall dependencies.
