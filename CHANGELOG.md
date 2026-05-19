@@ -2,6 +2,11 @@
 
 All notable changes to this package are documented in this file.
 
+## v1.1.1 - 2026-05-19
+
+- Improved package metadata and README clarity for frontend and Filament usage
+- Clarified that tokens can be used without Tailwind and how to update to newer tags
+
 ## v1.1.0 - 2026-05-19
 
 - Added exported Filament admin theme bridge at `@dex/brand/filament.css`
