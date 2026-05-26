@@ -136,7 +136,7 @@ html.fi,
 .fi-simple-main .fi-checkbox-list-option-label,
 .fi-simple-main .fi-fo-checkbox-list-option-label,
 .fi-simple-main .fi-fo-checkbox-field-wrp-label {
-    color: color-mix(in srgb, var(--dex-text, #f5eff3) 92%, white);
+    color: color-mix(in srgb, var(--dex-gold-light, #f5a623) 38%, var(--dex-text-muted, #c4aebb));
 }
 
 .fi-topbar,
@@ -258,8 +258,10 @@ html.fi,
 }
 
 .fi-section .fi-section-header-heading {
-    color: var(--dex-text, #f5eff3);
-    font-family: var(--dex-font-ui, "Space Grotesk"), system-ui, sans-serif;
+    color: color-mix(in srgb, var(--dex-gold-light, #f5a623) 72%, var(--dex-text, #f5eff3));
+    font-family: var(--dex-font-display, "Barlow Condensed"), var(--dex-font-ui, "Space Grotesk"), system-ui, sans-serif;
+    letter-spacing: var(--dex-display-spacing, 0.04em);
+    text-transform: uppercase;
 }
 
 .fi-section .fi-section-header-description {
@@ -768,9 +770,17 @@ textarea.fi-input::placeholder {
 }
 
 /* Form contrast boost (Edit pages like "Edit Item") */
-.fi-fo-field .fi-fo-field-label-content {
-    color: color-mix(in srgb, var(--dex-text, #f5eff3) 92%, white);
+.fi-fo-field .fi-fo-field-label,
+.fi-fo-field .fi-fo-field-label-content,
+.fi-fo-field-wrp-label,
+.fi-fo-field-wrp-label span,
+.fi-fo-builder-item-header-heading,
+.fi-fo-builder-block-label,
+.fi-fo-repeater-item-header-heading,
+.fi-fo-repeater-item-label {
+    color: color-mix(in srgb, var(--dex-gold-light, #f5a623) 38%, var(--dex-text-muted, #c4aebb));
     font-weight: 600;
+    letter-spacing: 0.01em;
 }
 
 .fi-fo-field .fi-fo-field-label-required-mark {
@@ -1060,4 +1070,237 @@ textarea.fi-input::placeholder {
     background: color-mix(in srgb, var(--dex-teal-light, #00b8c8) 42%, black) !important;
     border-color: color-mix(in srgb, var(--dex-teal-light, #00b8c8) 74%, black) !important;
     color: #f4ffff !important;
+}
+
+/* Rich text editor (TipTap / ProseMirror) — default Filament bg is white. */
+.fi-fo-rich-editor,
+.fi-fo-rich-editor-wrp,
+.fi-fo-rich-editor-container {
+    background: color-mix(in srgb, var(--dex-surface-high, #4e3352) 90%, black) !important;
+    border: 1px solid color-mix(in srgb, var(--dex-teal, #00929f) 28%, var(--dex-border, #5c3d5e)) !important;
+    border-radius: var(--dex-radius, 8px) !important;
+    color: var(--dex-text, #f5eff3) !important;
+}
+
+.fi-fo-rich-editor-tool-btns,
+.fi-fo-rich-editor-toolbar {
+    background: color-mix(in srgb, var(--dex-surface-inset, #221528) 80%, black) !important;
+    border-bottom: 1px solid color-mix(in srgb, var(--dex-border, #5c3d5e) 80%, black) !important;
+}
+
+.fi-fo-rich-editor-tool-btn,
+.fi-fo-rich-editor-toolbar button {
+    color: color-mix(in srgb, var(--dex-teal-light, #00b8c8) 70%, white) !important;
+    background: transparent !important;
+}
+
+.fi-fo-rich-editor-tool-btn:hover,
+.fi-fo-rich-editor-tool-btn:focus-visible,
+.fi-fo-rich-editor-toolbar button:hover,
+.fi-fo-rich-editor-toolbar button:focus-visible {
+    background: color-mix(in srgb, var(--dex-teal, #00929f) 28%, black) !important;
+    color: var(--dex-text, #f5eff3) !important;
+}
+
+.fi-fo-rich-editor-tool-btn.fi-active,
+.fi-fo-rich-editor-tool-btn[aria-pressed="true"] {
+    background: color-mix(in srgb, var(--dex-gold, #d4860a) 24%, black) !important;
+    color: color-mix(in srgb, var(--dex-gold-light, #f5a623) 74%, white) !important;
+}
+
+.fi-fo-rich-editor .tiptap,
+.fi-fo-rich-editor .ProseMirror,
+.fi-fo-rich-editor [contenteditable="true"],
+.tiptap.ProseMirror {
+    background: transparent !important;
+    color: var(--dex-text, #f5eff3) !important;
+    caret-color: var(--dex-gold-light, #f5a623);
+    min-height: 8rem;
+}
+
+.fi-fo-rich-editor .tiptap p.is-editor-empty:first-child::before,
+.fi-fo-rich-editor .ProseMirror p.is-editor-empty:first-child::before {
+    color: var(--dex-text-subtle, #8b6b7a) !important;
+}
+
+/* Markdown editor — same default-white surface. */
+.fi-fo-markdown-editor,
+.fi-fo-markdown-editor-wrp,
+.fi-fo-markdown-editor-container,
+.fi-fo-markdown-editor textarea,
+.fi-fo-markdown-editor .EasyMDEContainer,
+.fi-fo-markdown-editor .CodeMirror,
+.fi-fo-markdown-editor .CodeMirror-scroll {
+    background: color-mix(in srgb, var(--dex-surface-high, #4e3352) 90%, black) !important;
+    color: var(--dex-text, #f5eff3) !important;
+    border-color: color-mix(in srgb, var(--dex-teal, #00929f) 28%, var(--dex-border, #5c3d5e)) !important;
+}
+
+.fi-fo-markdown-editor .editor-toolbar,
+.fi-fo-markdown-editor .editor-statusbar {
+    background: color-mix(in srgb, var(--dex-surface-inset, #221528) 80%, black) !important;
+    border-color: color-mix(in srgb, var(--dex-border, #5c3d5e) 80%, black) !important;
+    color: var(--dex-text-muted, #c4aebb) !important;
+}
+
+/* Code editor (CodeMirror 6 used by Filament code fields). */
+.fi-fo-code-editor,
+.fi-fo-code-editor .cm-editor,
+.fi-fo-code-editor .cm-scroller,
+.fi-fo-code-editor .cm-content,
+.fi-fo-code-editor .cm-gutters {
+    background: color-mix(in srgb, var(--dex-surface-inset, #221528) 85%, black) !important;
+    color: var(--dex-text, #f5eff3) !important;
+    border-color: color-mix(in srgb, var(--dex-border, #5c3d5e) 80%, black) !important;
+}
+
+.fi-fo-code-editor .cm-gutters {
+    color: var(--dex-text-subtle, #8b6b7a) !important;
+}
+
+.fi-fo-code-editor .cm-activeLine,
+.fi-fo-code-editor .cm-activeLineGutter {
+    background: color-mix(in srgb, var(--dex-teal, #00929f) 14%, transparent) !important;
+}
+
+/* Color picker — preview swatch defaults to white when empty. */
+.fi-fo-color-picker .fi-input-wrp,
+.fi-color-picker-trigger {
+    background: color-mix(in srgb, var(--dex-surface-high, #4e3352) 90%, black) !important;
+}
+
+.fi-color-picker-trigger-preview,
+.fi-fo-color-picker-preview {
+    border: 1px solid color-mix(in srgb, var(--dex-border, #5c3d5e) 80%, black) !important;
+}
+
+.fi-color-picker-trigger-preview:empty,
+.fi-fo-color-picker-preview:empty {
+    background: color-mix(in srgb, var(--dex-surface-inset, #221528) 80%, black) !important;
+}
+
+/* Modals / dialog windows — Filament's default is white. */
+.fi-modal-window,
+.fi-modal-content {
+    background: color-mix(in srgb, var(--dex-surface, #3d2840) 95%, black) !important;
+    border: 1px solid color-mix(in srgb, var(--dex-border, #5c3d5e) 80%, black) !important;
+    color: var(--dex-text, #f5eff3) !important;
+}
+
+.fi-modal-heading {
+    color: color-mix(in srgb, var(--dex-gold-light, #f5a623) 72%, var(--dex-text, #f5eff3)) !important;
+}
+
+.fi-modal-description {
+    color: var(--dex-text-muted, #c4aebb) !important;
+}
+
+/* Tags input — chips and input wrapper default to white. */
+.fi-fo-tags-input .fi-fo-tags-input-tag,
+.fi-fo-tags-input-tag {
+    background: color-mix(in srgb, var(--dex-teal-muted, #0c3f44) 74%, black) !important;
+    color: color-mix(in srgb, var(--dex-teal-light, #00b8c8) 78%, white) !important;
+    border: 1px solid color-mix(in srgb, var(--dex-teal, #00929f) 58%, black) !important;
+}
+
+/* Toggle buttons / radio group / checkbox cards default surfaces. */
+.fi-fo-toggle-buttons .fi-fo-toggle-buttons-item-label,
+.fi-fo-radio-option,
+.fi-fo-checkbox-list-option {
+    background: color-mix(in srgb, var(--dex-surface-high, #4e3352) 86%, black) !important;
+    border: 1px solid color-mix(in srgb, var(--dex-border, #5c3d5e) 80%, black) !important;
+    color: var(--dex-text, #f5eff3) !important;
+}
+
+/* Builder & Repeater wrappers — Filament defaults the inner "card" to white. */
+.fi-fo-builder,
+.fi-fo-repeater {
+    background: transparent !important;
+}
+
+.fi-fo-builder-item,
+.fi-fo-builder-item-wrp,
+.fi-fo-repeater-item,
+.fi-fo-repeater-item-wrp {
+    background: color-mix(in srgb, var(--dex-surface, #3d2840) 95%, black) !important;
+    border: 1px solid color-mix(in srgb, var(--dex-border, #5c3d5e) 78%, black) !important;
+    border-radius: var(--dex-radius-lg, 12px) !important;
+    box-shadow: var(--dex-shadow-sm, 0 1px 3px rgba(0, 0, 0, 0.4)) !important;
+    overflow: hidden;
+}
+
+.fi-fo-builder-item-header,
+.fi-fo-repeater-item-header {
+    background: linear-gradient(
+        90deg,
+        color-mix(in srgb, var(--dex-surface-high, #4e3352) 88%, black) 0%,
+        color-mix(in srgb, var(--dex-surface, #3d2840) 92%, black) 100%
+    ) !important;
+    border-bottom: 1px solid color-mix(in srgb, var(--dex-border, #5c3d5e) 78%, black) !important;
+    color: var(--dex-text, #f5eff3) !important;
+}
+
+.fi-fo-builder-item-header-heading,
+.fi-fo-builder-block-label,
+.fi-fo-builder-item-header .fi-fo-builder-item-label,
+.fi-fo-repeater-item-header-heading,
+.fi-fo-repeater-item-label {
+    color: color-mix(in srgb, var(--dex-gold-light, #f5a623) 72%, var(--dex-text, #f5eff3)) !important;
+    font-family: var(--dex-font-display, "Barlow Condensed"), var(--dex-font-ui, "Space Grotesk"), system-ui, sans-serif !important;
+    letter-spacing: var(--dex-display-spacing, 0.04em) !important;
+    text-transform: uppercase !important;
+}
+
+.fi-fo-builder-item-header-subheading,
+.fi-fo-repeater-item-header-subheading {
+    color: var(--dex-text-muted, #c4aebb) !important;
+}
+
+.fi-fo-builder-item-content,
+.fi-fo-builder-item-data,
+.fi-fo-builder-item > .fi-fo-component-ctn,
+.fi-fo-repeater-item-content,
+.fi-fo-repeater-item > .fi-fo-component-ctn {
+    background: color-mix(in srgb, var(--dex-surface, #3d2840) 96%, black) !important;
+    color: var(--dex-text, #f5eff3) !important;
+    border-color: color-mix(in srgb, var(--dex-border, #5c3d5e) 78%, black) !important;
+}
+
+/* Generic Filament form layout containers — these are the wrappers
+   between the item header and the actual fields, and they ship as white. */
+.fi-fo-component-ctn,
+.fi-fo-section,
+.fi-fo-fieldset,
+.fi-fo-grid,
+.fi-fo-group {
+    background: transparent !important;
+}
+
+.fi-fo-section > .fi-fo-section-content-ctn,
+.fi-fo-fieldset > .fi-fo-fieldset-content-ctn {
+    background: color-mix(in srgb, var(--dex-surface, #3d2840) 95%, black) !important;
+    border: 1px solid color-mix(in srgb, var(--dex-border, #5c3d5e) 78%, black) !important;
+    border-radius: var(--dex-radius-lg, 12px) !important;
+    color: var(--dex-text, #f5eff3) !important;
+}
+
+.fi-fo-section-header-heading,
+.fi-fo-fieldset-label {
+    color: color-mix(in srgb, var(--dex-gold-light, #f5a623) 72%, var(--dex-text, #f5eff3)) !important;
+    font-family: var(--dex-font-display, "Barlow Condensed"), var(--dex-font-ui, "Space Grotesk"), system-ui, sans-serif !important;
+    letter-spacing: var(--dex-display-spacing, 0.04em) !important;
+    text-transform: uppercase !important;
+}
+
+/* "View fields" / "Edit" action links that sit on the white wrapper. */
+.fi-fo-builder-item-header .fi-link,
+.fi-fo-repeater-item-header .fi-link,
+.fi-fo-field-wrp .fi-link {
+    color: color-mix(in srgb, var(--dex-teal-light, #00b8c8) 78%, white) !important;
+}
+
+.fi-fo-builder-item-header .fi-link:hover,
+.fi-fo-repeater-item-header .fi-link:hover,
+.fi-fo-field-wrp .fi-link:hover {
+    color: color-mix(in srgb, var(--dex-gold-light, #f5a623) 70%, white) !important;
 }

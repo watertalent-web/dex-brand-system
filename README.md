@@ -11,14 +11,14 @@ DEX shared design system package for frontend apps and Laravel Filament admin pa
 ## Install
 
 ```bash
-npm i github:watertalent-web/dex-brand-system#v1.1.2
+npm i github:watertalent-web/dex-brand-system#v1.1.3
 ```
 
 Alternative package managers:
 
 ```bash
-pnpm add github:watertalent-web/dex-brand-system#v1.1.2
-yarn add github:watertalent-web/dex-brand-system#v1.1.2
+pnpm add github:watertalent-web/dex-brand-system#v1.1.3
+yarn add github:watertalent-web/dex-brand-system#v1.1.3
 ```
 
 ## Frontend Usage
@@ -61,9 +61,9 @@ Pin to a tag in your project `package.json`, for example:
 ```json
 {
   "dependencies": {
-    "@dex/brand": "github:watertalent-web/dex-brand-system#v1.1.2"
+    "@dex/brand": "github:watertalent-web/dex-brand-system#v1.1.3"
   }
 }
 ```
 
-When a newer package release is available, update the tag (for example from `v1.1.0` to `v1.1.1`) and reinstall dependencies.
+When a newer package release is available, update the tag (for example from `v1.1.2` to `v1.1.3`) and reinstall dependencies.
